@@ -17,14 +17,14 @@ module.exports = {
         },
       },
       {
-        text: /\.css$/,
+        test: /\.css$/,
         exclude: /node_modules/,
-        use: ['css-loader', 'style-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
-        text: /\.s(a|c)ss$/,
+        test: /\.s(a|c)ss$/,
         exclude: /node_modules/,
-        use: ['sass-loader', 'css-loader', 'style-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -35,7 +35,7 @@ module.exports = {
     template: './index.html'
   })],
   devServer: {
-    static: {       
+    static: {
       directory: path.resolve(__dirname, './dist')
     }
   }
