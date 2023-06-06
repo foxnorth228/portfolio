@@ -27,20 +27,6 @@
     }
 }
 
-.icon:nth-child(odd) {
-    margin-top: -3px;
-    @media (min-width: 481px) and (max-width: 767px) {
-        margin-top: 2px;
-    }
-}
-
-.icon:nth-child(even) {
-    margin-top: 3px;
-    @media (min-width: 481px) and (max-width: 767px) {
-        margin-top: 2px;
-    }
-}
-
 .icon.icon_github {
     margin: 20px  0 0 calc(8vw - 78px);
     width: 100px;
