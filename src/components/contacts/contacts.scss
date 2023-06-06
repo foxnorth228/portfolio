@@ -2,7 +2,13 @@
     display: flex;
     flex-direction: row;
     justify-self: start;
-    margin-left: 10px;
+    margin: 0 30px 0 30px;
+    @media (min-width: 768px) and (max-width: 991px) {
+        justify-self: end;
+    }
+    @media (max-width: 600px) {
+        display: none;
+    }
 }
 
 .contacts__button {
@@ -17,4 +23,12 @@
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 16px;
+        width: 139px;
+        height: 55px;
+    }
+    @media (max-width: 991px) {
+        display: none;
+    }
 }

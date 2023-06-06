@@ -4,5 +4,11 @@
     align-items: center;
     justify-items: center;
     grid-template-rows: 1fr;
-    grid-template-columns: max-content 1fr 1fr;
+    grid-template-columns: max-content 1fr minmax(max-content, 1fr);
+    @media (max-width: 991px) {
+        grid-template-columns: max-content 1fr minmax(max-content, max-content);
+    }
+    @media (max-width: 600px) {
+        grid-template-columns: max-content 1fr;
+    }
 }
