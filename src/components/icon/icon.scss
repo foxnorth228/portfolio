@@ -6,6 +6,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 6px;
+    transition: transform 0.8s ease-out;
+    transform: scale(1);
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
     @media (min-width: 992px) and (max-width: 1199px) {
         width: 55px;
         height: 55px;

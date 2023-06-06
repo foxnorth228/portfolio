@@ -24,6 +24,7 @@
 }
 
 .nav__link {
+    position: relative;
     margin: 0 10px 0 calc(34px + 4vw);
     @media (min-width: 992px) and (max-width: 1199px) {
         margin: 0 10px 0 calc(26px + 3.5vw);
@@ -33,6 +34,25 @@
     }
     @media (min-width: 481px) and (max-width: 767px) {
         margin: 0 7px 0 calc(20px + 1.5vw);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        transform-origin: bottom left;
+        transition: transform 0.8s ease-out;
+    }
+    &:hover::after {
+        cursor: pointer;
+        transform: scaleX(1);
     }
 }
 
