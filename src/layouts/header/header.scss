@@ -1,4 +1,8 @@
 .header {
     width: 100%;
-    display: flex;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: max-content 1fr 1fr;
 }

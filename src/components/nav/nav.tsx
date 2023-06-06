@@ -3,10 +3,10 @@ import './nav.scss';
 
 const Nav = () => {
   return (
-    <nav>
-      <p>Home</p>
-      <p>Projects</p>
-      <p>Skills</p>
+    <nav className="nav">
+      <p className="nav__link">Home</p>
+      <p className="nav__link">Projects</p>
+      <p className="nav__link">Skills</p>
     </nav>
   );
 };

@@ -1,0 +1,23 @@
+.icon {
+    width: 60px;
+    height: 60px;
+    clip-path: circle(50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 6px;
+}
+
+.icon:nth-child(odd) {
+    margin-top: -3px;
+}
+
+.icon:nth-child(even) {
+    margin-top: 3px;
+}
+
+.icon.icon_github {
+    margin: 20px  0 0 90px;
+    width: 100px;
+    height: 100px;   
+}

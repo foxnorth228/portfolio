@@ -1,0 +1,16 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    /* identical to box height */
+    color: #000000;
+}
+
+.nav__link {
+    margin: 0 10px 0 100px;
+}
