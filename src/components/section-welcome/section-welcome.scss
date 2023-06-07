@@ -1,0 +1,118 @@
+.sectionWelcome {
+    width: 100%;
+    height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        height: 400px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: 340px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        height: 280px;
+    }
+    @media (max-width: 600px) {
+        height: 500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr;
+    }
+}
+
+.sectionWelcome__pictureContainer {
+    z-index: 0;
+    width: fit-content;
+    align-items: center;
+    justify-self: center;
+    height: inherit;
+    width: auto;
+    @media (max-width: 600px) {
+        height: 250px;
+        justify-self: end;
+    }
+}
+
+.sectionWelcome__picture {
+    height: inherit;
+    width: auto;
+    @media (max-width: 600px) {
+        z-index: 0;
+        transform: translateY(-100px);
+    }
+}
+
+.sectionWelcome__text {
+    margin-left: calc(8.5vw - 10px);
+    margin-top: 100px;
+    align-self: center;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        margin-left: calc(6vw);
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 80px;
+        margin-left: 4vw;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        margin-top: 50px;
+        margin-left: 2vw;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        margin-left: 2vw;
+        margin-top: 10px;
+    }
+    @media (max-width: 480px) {
+        margin-left: 1vw;
+        margin-top: 10px;
+    }
+}
+
+.sectionWelcome__welcomeString {
+    position: relative;
+    z-index: 1;
+    font-family: 'Hannari';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+    color: #000000;
+    margin-bottom: 0;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 18px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 16px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) { 
+        font-size: 13px;
+    }
+    @media (max-width: 480px) {
+        font-size: 12px;
+    }
+}
+
+.sectinWelcome__description {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 25px;
+        line-height: 40px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        font-size: 22px;
+    }
+    @media (max-width: 480px) {
+        font-size: 15px;
+    }
+}
