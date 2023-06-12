@@ -1,3 +1,12 @@
 {
-    "presets": ["@babel/preset-react", "@babel/preset-env", "@babel/preset-typescript"]
+    "presets": ["@babel/preset-react", "@babel/preset-env", "@babel/preset-typescript"],
+    "plugins": [
+        ["module-resolver", { 
+            "root": ["."], 
+            "alias": {
+                "@assets": "./src/assets"
+            } 
+        }],
+        "inline-react-svg",
+    ],
 }

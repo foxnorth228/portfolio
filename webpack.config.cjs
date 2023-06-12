@@ -28,13 +28,15 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpe?g|svg|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        test: /\.svg$/,
+        issuer: /\.(js|ts)x?$/,
+        loader: 'svg-inline-loader'
       },
+    {
+        test: /\.m?js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
+    },
     ],
   },
   resolve: {
