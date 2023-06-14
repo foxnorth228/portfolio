@@ -18,12 +18,14 @@
 }
 
 .sectionAbout__title {
+    position: relative;
+    z-index: 1;
     margin: 15px 0;
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
-    line-height: 60px;
+    line-height: 35px;
     color: #000000;
     @media (min-width: 992px) and (max-width: 1199px) {
         font-size: 36px;
@@ -40,6 +42,7 @@
         font-size: 26px;
     }
     @media (max-width: 480px) {
+        margin: 0;
         font-size: 20px;
     }
 }

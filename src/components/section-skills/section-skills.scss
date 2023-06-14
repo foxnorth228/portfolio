@@ -3,6 +3,18 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 120px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        margin-top: 80px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        margin-top: 30px;
+    }
+    @media (max-width: 480px) {
+        margin-top: 10px;
+    }
 }
 
 .sectionSkills__block {
@@ -23,4 +35,23 @@
     font-weight: 600;
     font-size: 40px;
     line-height: 60px;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 36px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin: 25px 0 20px 0;
+        font-size: 32px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        margin: 15px 0 0 0;
+        font-size: 28px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        margin: 10px 0 0 0;
+        font-size: 26px;
+    }
+    @media (max-width: 480px) {
+        margin: 10px 0 0 0;
+        font-size: 24px;
+    }
 }

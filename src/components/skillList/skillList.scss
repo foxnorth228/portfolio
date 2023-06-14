@@ -4,7 +4,24 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(9, 1fr);
     width: 80%;
+    max-width: 850px;
     height: 90%;
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin: 15px 0 55px 0;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        margin: 10px 0 45px 0;
+    }
+    @media (max-width: 600px) {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        margin: 5px 0 30px 0;
+    }
+    @media (max-width: 480px) {
+        margin: 5px 0 30px 0;
+    }
 }
 
 .skill {
@@ -16,15 +33,27 @@
     align-items: center;
 }
 
-$n: 10;
-@for $i from 1 to $n {
-    .skill:nth-child(#{$i}) {
-        grid-column: $i;
+@media not (max-width: 600px) {
+    $n: 10;
+    @for $i from 1 to $n {
+        .skill:nth-child(#{$i}) {
+            grid-column: $i;
+        }
+    }
+    
+    .skill:nth-child(2n) {
+        grid-row: 2;
     }
 }
 
-.skill:nth-child(2n) {
-    grid-row: 2;
+@media (max-width: 600px) {
+    .skill:nth-child(even) {
+        order: 1;
+    }
+
+    .skill:nth-child(odd) {
+        order: -1;
+    }
 }
 
 .skill__image {
@@ -32,6 +61,26 @@ $n: 10;
     border: 0;
     width: 55px;
     height: 55px;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        width: 50px;
+        height: 50pxs;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 40px;
+        height: 40px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        width: 35px;
+        height: 35px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        width: 45px;
+        height: 45px;
+    }
+    @media (max-width: 480px) {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .skill__text {
@@ -42,4 +91,19 @@ $n: 10;
     font-size: 20px;
     line-height: 25px;
     color: white;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 18px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 16px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        font-size: 12px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        font-size: 14px;
+    }
+    @media (max-width: 480px) {
+        font-size: 12px;
+    }
 }

@@ -10,7 +10,7 @@ const SkillList = () => {
     ['js.svg', 'javascript'],
     ['webpack.svg', 'webpack'],
     ['ts.svg', 'typescript'],
-    ['sass.svg', 'SASS/SCSS'],
+    ['sass.svg', 'SASS'],
     ['react.svg', 'react'],
   ];
   return (
