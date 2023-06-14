@@ -9,7 +9,7 @@ const AuthorFace = () => {
       <figcaption className="authorFace__text">
         {
           "Hi! I am Alexander Khitry, 20 years old, frontend developer (React.js).  \
-          I am fourth-year student in BSUIR, my profeccion connected with computer science. \
+          I am fourth-year student in BSUIR, my specialization connected with computer science. \
           When I was 18 yo I tried myself in creating sites for a first time and was very excited about it. \
           I worked a lot to dig in frontend development, finished some courses. \
           I don't stop there and continue learning something new. \
