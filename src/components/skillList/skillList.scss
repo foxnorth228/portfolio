@@ -1,5 +1,5 @@
 .skillList {
-    margin: 20px 0 70px 0;
+    margin: 40px 0 70px 0;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(9, 1fr);
@@ -25,6 +25,7 @@
 }
 
 .skill {
+    position: relative;
     margin: 0;
     justify-self: center;
     width: 100%;
@@ -57,6 +58,17 @@
 }
 
 .skill__image {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    @media (min-width: 601px) and (max-width: 991px) {
+        margin-top: 15px;
+        margin-bottom: -15px;
+    }
+    @media (max-width: 600px) {
+        margin-top: 10px;
+        margin-bottom: -10px;
+    }
+    transition: margin-top 0.8s ease-out, margin-bottom 0.8s ease-out;
     outline: 0;
     border: 0;
     width: 55px;
@@ -84,6 +96,9 @@
 }
 
 .skill__text {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
     margin-top: 10px;
     font-family: 'Lexend';
     font-style: normal;
@@ -106,4 +121,14 @@
     @media (max-width: 480px) {
         font-size: 12px;
     }
+}
+
+.skill:hover .skill__text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.skill:hover .skill__image {
+    margin-top: 0;
+    margin-bottom: 0;
 }
