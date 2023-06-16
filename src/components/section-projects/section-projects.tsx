@@ -6,7 +6,7 @@ const SectionProjects = () => {
   const projects = [
     {
       src: 'green-api.png',
-      title: 'title',
+      title: 'Title',
       desc: 'description',
       stack: 'stack',
       github: 'github',

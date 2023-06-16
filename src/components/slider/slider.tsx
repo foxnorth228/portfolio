@@ -10,7 +10,7 @@ interface ISlider {
 const Slider = ({ elems }: ISlider) => {
   const [currentElem, setCurrentElem] = useState(0);
   return (
-    <div>
+    <div className="slider">
       <ArrowLeft className="arrow" />
       <Project el={elems[currentElem]} />
       <ArrowRight className="arrow" />
