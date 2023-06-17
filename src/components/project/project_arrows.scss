@@ -1,0 +1,41 @@
+.arrow {
+    flex: 1 1 54px;
+    width: 54px;
+    height: 51px;
+    background: linear-gradient(270deg, black 0%, black 33%, rgb(128, 128, 128) 33%, rgb(128, 128, 128) 66%, black 66%, black 100%);
+    background-size: 162px 51px;
+    animation: 2.4s ease-in-out infinite;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    animation-name: arrow;
+}
+
+.arrow__left {
+    grid-area: 2 / 1 / span 1 / span 1;
+    mask-image: url("@assets/arrow-left.svg");
+    -webkit-mask-image: url("@assets/arrow-left.svg");
+}
+
+.arrow__right {
+    grid-area: 2 / 10 / span 1 / span 1;
+    mask-image: url("@assets/arrow-right.svg");
+    -webkit-mask-image: url("@assets/arrow-right.svg");
+    animation-direction: reverse;
+}
+
+@keyframes arrow {
+    0% {
+        background-position: 162px 0px;
+        transform: scale(1);
+    }
+    50% {
+        background-position: 108px 0px;
+        transform: scale(1.2);
+    }
+    100% {
+        background-position: 54px 0px;
+        transform: scale(1);
+    }
+}

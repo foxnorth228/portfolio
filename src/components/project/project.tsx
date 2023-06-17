@@ -1,5 +1,6 @@
 import React from 'react';
 import './project.scss';
+import './project_arrows.scss';
 
 export interface IProject {
   src: string;
@@ -14,7 +15,9 @@ const Project = ({ el }: { el: IProject }) => {
   return (
     <div className="project">
       <h2 className="project__title">{el.title}</h2>
+      <div className="arrow arrow__left" />
       <img className="project__image" src={`projects/${el.src}`}></img>
+      <div className="arrow arrow__right" />
       <div className="project__description">
         <h3 className="project__descelem project__desc">Description: {el.desc}</h3>
         <h3 className="project__descelem project__stack">Stack: {el.stack}</h3>
