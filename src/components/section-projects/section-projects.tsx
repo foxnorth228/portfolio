@@ -5,8 +5,24 @@ import Slider from '@components/slider/slider';
 const SectionProjects = () => {
   const projects = [
     {
-      src: 'green-api.png',
+      src: 'projects/green-api.png',
       title: 'Title',
+      desc: 'description',
+      stack: 'stack',
+      github: 'github',
+      deploy: 'deploy',
+    },
+    {
+      src: 'projects/test-image.png',
+      title: 'Title2',
+      desc: 'description',
+      stack: 'stack',
+      github: 'github',
+      deploy: 'deploy',
+    },
+    {
+      src: 'projects/green-api.png',
+      title: 'Title3',
       desc: 'description',
       stack: 'stack',
       github: 'github',

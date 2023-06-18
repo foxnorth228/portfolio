@@ -13,13 +13,13 @@
 }
 
 .arrow__left {
-    grid-area: 2 / 1 / span 1 / span 1;
+    grid-area: 2 / 1 / span 1 / span 3;
     mask-image: url("@assets/arrow-left.svg");
     -webkit-mask-image: url("@assets/arrow-left.svg");
 }
 
 .arrow__right {
-    grid-area: 2 / 10 / span 1 / span 1;
+    grid-area: 2 / 18 / span 1 / span 3;
     mask-image: url("@assets/arrow-right.svg");
     -webkit-mask-image: url("@assets/arrow-right.svg");
     animation-direction: reverse;
