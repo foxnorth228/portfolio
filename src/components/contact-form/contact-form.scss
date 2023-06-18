@@ -1,0 +1,70 @@
+.contactForm {
+    display: flex;
+    align-items: flex-end;
+}
+
+.contactForm__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contactForm__image {
+    width: 39.7vw;
+    height: 100%;
+}
+
+.contactForm__input {
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 22px;
+    padding-left: 48px;
+    border-radius: 28px;
+    width: 28.1vw;
+    height: 74px;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.contactForm__input_name {
+
+}
+
+.contactForm__input_email {
+  
+}
+
+.contactForm__input_fieldset {
+    height: 267px;
+}
+
+.contactForm__button_submit {
+    margin-top: 48px;
+}
+
+.contactForm__button_submit2 {
+    padding: 0.5rem 1rem;
+    position: relative;
+    background-color: white;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+    border-radius: 1.75rem;
+  }
+  
+  .contactForm__button_submit2::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background-image: linear-gradient(
+      90deg,
+      hsl(289, 65%, 64%),
+      hsl(226, 78%, 67%)
+    );
+border-radius: 1.75rem;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import './contacts.scss';
 import Icon from '@components/icon/icon';
 
-const Contacts = () => {
+const Contacts = ({ isButton }: { isButton: boolean }) => {
   const links = [
     ['mailto:khitrii03@gmail.com', 'contacts/mail.svg', 'icon_main'],
     ['https://www.linkedin.com/in/alex-khitry-016687265', 'contacts/linked.svg', 'icon_linked'],
@@ -17,7 +17,7 @@ const Contacts = () => {
           <Icon link={el[1]} className={el[2]} />
         </a>
       ))}
-      <button className="contacts__button">{"Let's connect"}</button>
+      {isButton && <button className="contacts__button">{"Let's connect"}</button>}
     </article>
   );
 };

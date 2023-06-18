@@ -11,7 +11,7 @@ const Header = () => {
         <Icon link="gitlogo.jpeg" className="icon_github" />
       </a>
       <Nav />
-      <Contacts />
+      <Contacts isButton={true} />
     </header>
   );
 };
