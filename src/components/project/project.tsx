@@ -57,7 +57,7 @@ const Project = ({ el, prevEl, setEl }: IProjects) => {
           refMoveImg!.current!.classList.remove('project__nextimage_active');
           setEl(-1);
           setMoveLeft(1);
-          sliderImgLeft();
+          window.setTimeout(() => sliderImgLeft(), 0);
         }}
         className="arrow arrow__left"
       />
@@ -71,7 +71,7 @@ const Project = ({ el, prevEl, setEl }: IProjects) => {
           refMoveImg!.current!.classList.remove('project__nextimage_active');
           setEl(1);
           setMoveLeft(-1);
-          sliderImgRight();
+          window.setTimeout(() => sliderImgRight(), 0);
         }}
         className="arrow arrow__right"
       />
