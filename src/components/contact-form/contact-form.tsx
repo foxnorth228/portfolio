@@ -31,7 +31,7 @@ const ContactForm = () => {
           {...register('message')}
         />
         <button className="contactForm__button_submit2" type="submit">
-          Send
+          <span className="contactForm__button_submit2__label">Send</span>
         </button>
       </form>
     </section>

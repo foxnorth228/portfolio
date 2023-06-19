@@ -45,26 +45,44 @@
 }
 
 .contactForm__button_submit2 {
-    padding: 0.5rem 1rem;
     position: relative;
-    background-color: white;
-    background-clip: padding-box;
-    border: 5px solid transparent;
-    border-radius: 1.75rem;
-  }
-  
-  .contactForm__button_submit2::before {
+    width: 209px;
+    height: 74px;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+}
+
+.contactForm__button_submit2::after {
     content: "";
     position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: -100px;
+    right: 0;
+    z-index: 1;
+    -webkit-mask-image: url("@assets/rounded-rect.svg");
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
     background-image: linear-gradient(
       90deg,
       hsl(289, 65%, 64%),
       hsl(226, 78%, 67%)
     );
-border-radius: 1.75rem;
+}
+
+.contactForm__button_submit2__label {
+    position: relative;
+    z-index: 100;
+    background-image: linear-gradient(
+    90deg,
+    hsl(289, 65%, 64%),
+    hsl(226, 78%, 67%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
