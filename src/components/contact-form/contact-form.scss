@@ -14,13 +14,27 @@
     height: 100%;
 }
 
-.contactForm__input {
-    background-color: rgba(0, 0, 0, 0);
-    margin-top: 22px;
-    padding-left: 48px;
-    border-radius: 28px;
-    width: 28.1vw;
-    height: 74px;
+@mixin gradiendBorder($gradient, $svg-url: "@assets/rounded-rect3.svg") {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        mask: url($svg-url) center center / cover no-repeat;
+        -webkit-mask: url($svg-url) center center / cover no-repeat;
+        background-image: $gradient;
+    }
+}
+
+@mixin text {
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 500;
@@ -28,61 +42,57 @@
     line-height: 30px;
 }
 
-.contactForm__input_name {
-
+@mixin inputText {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    width: 90%;
+    height: 90%;
+    padding-left: 12px;
+    border: 0;
+    @include text();
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
 }
 
-.contactForm__input_email {
-  
+.contactForm__name {
+    width: 28.1vw;
+    height: 74px;
+    @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(46, 137, 13, 0.89) 100.5%));
 }
 
-.contactForm__input_fieldset {
+.contactForm__email {
+    width: 28.1vw;
+    height: 74px;
+    margin-top: 22px;
+    @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(97, 0, 255, 0.89) 100.5%));
+}
+
+.contactForm__message {
+    width: 28.1vw;
     height: 267px;
+    margin-top: 22px;
+    @include gradiendBorder(linear-gradient(93.67deg, #C0369A 46.98%, rgba(14, 41, 136, 0.890802) 100.49%, rgba(46, 137, 13, 0.89) 100.5%));
+}
+
+.contactForm__input {
+    @include inputText();
 }
 
 .contactForm__button_submit {
-    margin-top: 48px;
-}
-
-.contactForm__button_submit2 {
-    position: relative;
     width: 209px;
     height: 74px;
-    border: 0;
-    background: rgba(0, 0, 0, 0);
+    margin-top: 48px;
+    @include gradiendBorder(linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%), "@assets/rounded-rect10.svg");
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.contactForm__button_submit2::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: -100px;
-    right: 0;
-    z-index: 1;
-    -webkit-mask-image: url("@assets/rounded-rect.svg");
-    -webkit-mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    background-image: linear-gradient(
-      90deg,
-      hsl(289, 65%, 64%),
-      hsl(226, 78%, 67%)
-    );
-}
-
-.contactForm__button_submit2__label {
-    position: relative;
-    z-index: 100;
-    background-image: linear-gradient(
-    90deg,
-    hsl(289, 65%, 64%),
-    hsl(226, 78%, 67%)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+.contactForm__label {
+    color: black;
+    @include text();
 }

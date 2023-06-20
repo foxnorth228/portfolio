@@ -13,25 +13,31 @@ const ContactForm = () => {
     <section className="contactForm">
       <img className="contactForm__image" src="footer-image.png" alt="footer-image" />
       <form onSubmit={handleSubmit(onSubmit)} className="contactForm__form">
-        <input
-          className="contactForm__input contactForm__input_name"
-          type="text"
-          placeholder="Name..."
-          {...register('name')}
-        />
-        <input
-          className="contactForm__input contactForm__input_email"
-          type="email"
-          placeholder="Email..."
-          {...register('email')}
-        />
-        <textarea
-          className="contactForm__input contactForm__input_fieldset"
-          placeholder="Message..."
-          {...register('message')}
-        />
-        <button className="contactForm__button_submit2" type="submit">
-          <span className="contactForm__button_submit2__label">Send</span>
+        <div className="contactForm__name">
+          <input
+            className="contactForm__input"
+            type="text"
+            placeholder="Name..."
+            {...register('name')}
+          />
+        </div>
+        <div className="contactForm__email">
+          <input
+            className="contactForm__input"
+            type="email"
+            placeholder="Email..."
+            {...register('email')}
+          />
+        </div>
+        <div className="contactForm__message">
+          <textarea
+            className="contactForm__input"
+            placeholder="Message..."
+            {...register('message')}
+          />
+        </div>
+        <button className="contactForm__button_submit" type="submit">
+          <span className="contactForm__label">Send</span>
         </button>
       </form>
     </section>
