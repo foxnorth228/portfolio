@@ -5,3 +5,26 @@
     flex-direction: column;
     align-items: center;
 }
+
+.footer__blocks {
+    width: 100%;
+    height: 192px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 71px;
+}
+
+.footer__block {
+    width: 617px;
+    height: 474px;
+    background: linear-gradient(180deg, #E4CA3F 0%, rgba(29, 151, 129, 0) 100%);
+    border-radius: 125px;
+}
+
+.footer__block1 {
+    margin-left: -166px;
+}
+
+.footer__block2 {
+    margin-right: -406px;
+}
