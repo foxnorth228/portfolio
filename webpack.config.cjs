@@ -10,7 +10,6 @@ module.exports = () => {
     prev[`process.env.${next}`] = JSON.stringify(env[next]);
     return prev;
   }, {});
-
   return {
     entry: './src/index.tsx',
     output: {
@@ -64,7 +63,8 @@ module.exports = () => {
     fallback: {
       "path": false,
       "os": false,
-      "crypto": false
+      "crypto": false,
+      "process": require.resolve("process/browser")
     }
   },
   plugins: [
