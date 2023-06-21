@@ -87,7 +87,8 @@
 @mixin inputText {
     z-index: 2;
     background-color: rgba(0, 0, 0, 0);
-    width: 90%;
+    border-radius: 28px;
+    width: calc(100% - 4px);
     height: 90%;
     padding-left: 12px;
     border: 0;
@@ -132,6 +133,10 @@
     }
 }
 
+.contactForm__name:-webkit-autofill {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .contactForm__email {
     width: 28.1vw;
     height: 64px;
@@ -154,6 +159,11 @@
         margin-top: 10px;
         @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(97, 0, 255, 0.89) 100.5%), "@assets/rounded-rect2.svg");  
     }
+}
+
+.contactForm__email:-webkit-autofill,
+.contactForm__email:-webkit-autofill:focus {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .contactForm__message {
@@ -214,4 +224,30 @@
 .contactForm__label {
     color: black;
     @include text();
+}
+
+.contactForm__validationError {
+    position: absolute;
+    top: 100%;
+    color: red;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    @media (min-width: 992px) and (max-width: 1199px) { 
+        font-size: 14px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 13px
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        font-size: 11px;   
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        font-size: 10px;   
+    }
+    @media (max-width: 480px) {
+        font-size: 8px;
+    }
 }

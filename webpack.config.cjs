@@ -1,27 +1,36 @@
 const path = require('path')
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = {
-  entry: './src/index.tsx',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|ts)x?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
+module.exports = () => {
+  const env = dotenv.config().parsed;
+  const envKeys = Object.keys(env).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+  }, {});
+
+  return {
+    entry: './src/index.tsx',
+    output: {
+      path: path.resolve(__dirname, './dist'),
+      filename: 'bundle.js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|ts)x?$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+          },
         },
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'],
-      },
+        {
+          test: /\.css$/,
+          exclude: /node_modules/,
+          use: ['style-loader', 'css-loader'],
+        },
       {
         test: /\.s[ac]ss$/,
         exclude: /node_modules/,
@@ -52,6 +61,11 @@ module.exports = {
       '@routes': path.resolve(__dirname, 'src/routes'),
       '@services': path.resolve(__dirname, 'src/services'),
     },
+    fallback: {
+      "path": false,
+      "os": false,
+      "crypto": false
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -62,10 +76,12 @@ module.exports = {
         { from: './src/assets', to: '' }, // <- your path to favicon
       ],
     }),
+    new webpack.DefinePlugin(envKeys)
   ],
   devServer: {
     static: {
       directory: path.resolve(__dirname, './dist')
     }
   }
+}
 }
