@@ -26,7 +26,6 @@ const ContactForm = () => {
     );
     reset();
   };
-  console.log(errors);
   return (
     <section className="contactForm">
       <img className="contactForm__image" src="footer-image.png" alt="footer-image" />
