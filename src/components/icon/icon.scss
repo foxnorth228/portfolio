@@ -25,6 +25,11 @@
         height: 42px;
         margin-right: 5px;
     }
+    @media (max-width: 480px) {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
 }
 
 .icon.icon_github {
