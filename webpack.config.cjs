@@ -1,16 +1,9 @@
 const path = require('path')
-const webpack = require('webpack');
-const dotenv = require('dotenv');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = () => {
-  const env = dotenv.config().parsed;
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
-  return {
+module.exports = {
     entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, './dist'),
@@ -76,12 +69,13 @@ module.exports = () => {
         { from: './src/assets', to: '' }, // <- your path to favicon
       ],
     }),
-    new webpack.DefinePlugin(envKeys)
+    new Dotenv({
+      systemvars: true
+    })
   ],
   devServer: {
     static: {
       directory: path.resolve(__dirname, './dist')
     }
   }
-}
 }
