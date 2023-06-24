@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import './slider.scss';
 import './slider_arrows.scss';
 
@@ -11,83 +11,66 @@ interface IProject {
   deploy: string;
 }
 
-interface ISlider {
+interface IProjects {
   elems: IProject[];
 }
 
-const Slider = ({ elems }: ISlider) => {
-  const changeEl = (state: number, actions: number) => {
-    setPrevEl(state);
-    return Math.min(Math.max(state + actions, 0), elems.length - 1);
-  };
+const Slider = ({ elems }: IProjects) => {
+  const indexPrevElem = useRef(0);
+  const indexCurrElem = useRef(0);
+  const [isMoveLeft, setisMoveLeft] = useState(-1);
+  const [currLeftPos, setCurrLeftPos] = useState('-100%');
+  const [currTransition, setCurrTransition] = useState('left 1.6s ease-out');
 
-  const [indexPrevElem, setPrevEl] = useState(0);
-  const [indexCurrElem, setCurrentElem] = useReducer(changeEl, 0);
-  const [moveLeft, setMoveLeft] = useState(-1);
-  const [currLeft, setCurrLeft] = useState('-100%');
-  const [currTrans, setCurrTrans] = useState('left 1.6s ease-out');
+  const changeCurrElem = useCallback(
+    (type: number) => {
+      const currIndex = indexCurrElem.current;
+      indexPrevElem.current = currIndex;
+      indexCurrElem.current = Math.min(Math.max(currIndex + type, 0), elems.length - 1);
+    },
+    [elems.length]
+  );
 
-  const step = useCallback((num: number) => {
-    console.log(num);
-    setCurrTrans('left 1.6s ease-out');
-    setCurrLeft(num === 1 ? '0%' : '-100%');
+  const startSlideAnimation = useCallback((num: number) => {
+    setCurrTransition('left 1.6s ease-out');
+    setCurrLeftPos(num === 1 ? '0%' : '-100%');
   }, []);
 
-  const el = elems[indexCurrElem];
-  const prevElem = elems[indexPrevElem];
+  const registerSlideAnimation = useCallback(
+    (startPos: string, animRotation: number) => {
+      changeCurrElem(-animRotation);
+      setisMoveLeft(animRotation);
+      if (indexCurrElem.current === indexPrevElem.current) {
+        return;
+      }
+      setCurrTransition('');
+      setCurrLeftPos(startPos);
+      setTimeout(() => startSlideAnimation(animRotation), 0);
+    },
+    [changeCurrElem, startSlideAnimation]
+  );
 
-  let moveImg = '';
-  let staticImg = '';
-  switch (moveLeft) {
-    case 1:
-      moveImg = el.src;
-      staticImg = prevElem.src;
-      break;
-    case -1:
-      moveImg = prevElem.src;
-      staticImg = el.src;
-      break;
-    default:
-      moveImg = prevElem.src;
-      staticImg = el.src;
-      break;
-  }
+  const el = elems[indexCurrElem.current];
+  const prevElem = elems[indexPrevElem.current];
+  const [moveImg, staticImg] = isMoveLeft === 1 ? [el.src, prevElem.src] : [prevElem.src, el.src];
   return (
-    <div className="project">
-      <h2 className="project__title">{el.title}</h2>
-      <div
-        onClick={() => {
-          setCurrentElem(-1);
-          setMoveLeft(1);
-          setCurrTrans('');
-          setCurrLeft('-100%');
-          setTimeout(() => step(1), 0);
-        }}
-        className="arrow arrow__left"
-      />
-      <div className="project__imageBlock">
+    <div className="slider">
+      <h2 className="slider__title">{el.title}</h2>
+      <div onClick={() => registerSlideAnimation('-100%', 1)} className="arrow arrow__left" />
+      <div className="slider__imageBlock">
         <img
-          style={{ left: currLeft, transition: currTrans }}
-          className="project__nextimage"
+          style={{ left: currLeftPos, transition: currTransition }}
+          className="slider__nextimage"
           src={`${moveImg}`}
         ></img>
-        <img className="project__image" src={`${staticImg}`}></img>
+        <img className="slider__image" src={`${staticImg}`}></img>
       </div>
-      <div
-        onClick={() => {
-          setCurrentElem(1);
-          setMoveLeft(-1);
-          setCurrTrans('');
-          setCurrLeft('0%');
-          setTimeout(() => step(-1), 0);
-        }}
-        className="arrow arrow__right"
-      />
-      <div className="project__description">
-        <h3 className="project__descelem project__desc">Description: {el.desc}</h3>
-        <h3 className="project__descelem project__stack">Stack: {el.stack}</h3>
-        <h3 className="project__descelem project__github">Github link: {el.github}</h3>
-        <h3 className="project__descelem project__deploy">Deploy link: {el.deploy}</h3>
+      <div onClick={() => registerSlideAnimation('0%', -1)} className="arrow arrow__right" />
+      <div className="slider__description">
+        <h3 className="slider__descelem slider__desc">Description: {el.desc}</h3>
+        <h3 className="slider__descelem slider__stack">Stack: {el.stack}</h3>
+        <h3 className="slider__descelem slider__github">Github link: {el.github}</h3>
+        <h3 className="slider__descelem slider__deploy">Deploy link: {el.deploy}</h3>
       </div>
     </div>
   );
