@@ -18,11 +18,12 @@ interface IProjects {
 const Slider = ({ elems }: IProjects) => {
   const indexPrevElem = useRef(0);
   const indexCurrElem = useRef(0);
+  const isAnimAllowed = useRef(true);
+  const animationCount = useRef<Array<number>>([]);
+
   const [isMoveLeft, setisMoveLeft] = useState(-1);
   const [currLeftPos, setCurrLeftPos] = useState('-100%');
   const [currTransition, setCurrTransition] = useState('left 1.6s ease-out');
-  const isAnimAllowed = useRef(true);
-  const animationCount = useRef<Array<number>>([]);
 
   const changeCurrElem = useCallback(
     (type: number) => {
@@ -35,7 +36,7 @@ const Slider = ({ elems }: IProjects) => {
 
   const startSlideAnimation = useCallback(
     (num: number) => {
-      animationCount.current.pop();
+      animationCount.current.shift();
       setCurrTransition('left 1.4s ease-out');
       setCurrLeftPos(num === 1 ? '0%' : '-100%');
     },
@@ -74,10 +75,9 @@ const Slider = ({ elems }: IProjects) => {
       <div className="slider__imageBlock">
         <img
           onTransitionEnd={() => {
-            console.log('transition end');
             isAnimAllowed.current = true;
             if (animationCount.current.length > 0) {
-              const animRotation = animationCount.current.pop() ?? 1;
+              const animRotation = animationCount.current.shift() ?? 1;
               const startPos = animRotation === 1 ? '-100%' : '0%';
               setTimeout(() => registerSlideAnimation(startPos, animRotation), 40);
             }
