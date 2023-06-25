@@ -21,6 +21,8 @@ const Slider = ({ elems }: IProjects) => {
   const [isMoveLeft, setisMoveLeft] = useState(-1);
   const [currLeftPos, setCurrLeftPos] = useState('-100%');
   const [currTransition, setCurrTransition] = useState('left 1.6s ease-out');
+  const isAnimAllowed = useRef(true);
+  const animationCount = useRef<Array<number>>([]);
 
   const changeCurrElem = useCallback(
     (type: number) => {
@@ -31,23 +33,38 @@ const Slider = ({ elems }: IProjects) => {
     [elems.length]
   );
 
-  const startSlideAnimation = useCallback((num: number) => {
-    setCurrTransition('left 1.6s ease-out');
-    setCurrLeftPos(num === 1 ? '0%' : '-100%');
-  }, []);
+  const startSlideAnimation = useCallback(
+    (num: number) => {
+      console.log(animationCount.current.length);
+      animationCount.current.pop();
+      console.log(animationCount.current.length);
+      setCurrTransition('left 1.4s ease-out');
+      setCurrLeftPos(num === 1 ? '0%' : '-100%');
+      console.log(isAnimAllowed.current);
+    },
+    [animationCount]
+  );
 
   const registerSlideAnimation = useCallback(
     (startPos: string, animRotation: number) => {
-      changeCurrElem(-animRotation);
-      setisMoveLeft(animRotation);
-      if (indexCurrElem.current === indexPrevElem.current) {
+      animationCount.current.push(animRotation);
+      console.log(isAnimAllowed.current);
+      if (
+        !isAnimAllowed.current ||
+        (animRotation === 1 && indexCurrElem.current === 0) ||
+        (animRotation === -1 && indexCurrElem.current === elems.length - 1)
+      ) {
         return;
       }
+
+      isAnimAllowed.current = false;
+      changeCurrElem(-animRotation);
+      setisMoveLeft(animRotation);
       setCurrTransition('');
       setCurrLeftPos(startPos);
-      setTimeout(() => startSlideAnimation(animRotation), 0);
+      setTimeout(() => startSlideAnimation(animRotation), 40);
     },
-    [changeCurrElem, startSlideAnimation]
+    [animationCount, changeCurrElem, elems.length, startSlideAnimation]
   );
 
   const el = elems[indexCurrElem.current];
@@ -59,6 +76,15 @@ const Slider = ({ elems }: IProjects) => {
       <div onClick={() => registerSlideAnimation('-100%', 1)} className="arrow arrow__left" />
       <div className="slider__imageBlock">
         <img
+          onTransitionEnd={() => {
+            console.log('transition end');
+            isAnimAllowed.current = true;
+            if (animationCount.current.length > 0) {
+              const animRotation = animationCount.current.pop() ?? 1;
+              const startPos = animRotation === 1 ? '-100%' : '0%';
+              setTimeout(() => registerSlideAnimation(startPos, animRotation), 40);
+            }
+          }}
           style={{ left: currLeftPos, transition: currTransition }}
           className="slider__nextimage"
           src={`${moveImg}`}
