@@ -12,22 +12,22 @@ const SectionProjects = () => {
       github: 'https://github.com/foxnorth228/green-api-chat',
       deploy: 'https://master--thunderous-pothos-af6dd7.netlify.app/',
     },
-    {
-      src: 'projects/test-image.png',
-      title: 'Title2',
-      desc: 'description',
-      stack: 'stack',
-      github: 'github',
-      deploy: 'deploy',
-    },
-    {
-      src: 'projects/green-api.png',
-      title: 'Title3',
-      desc: 'description',
-      stack: 'stack',
-      github: 'github',
-      deploy: 'deploy',
-    },
+    // {
+    //   src: 'projects/test-image.png',
+    //   title: 'Title2',
+    //   desc: 'description',
+    //   stack: 'stack',
+    //   github: 'github',
+    //   deploy: 'deploy',
+    // },
+    // {
+    //   src: 'projects/green-api.png',
+    //   title: 'Title3',
+    //   desc: 'description',
+    //   stack: 'stack',
+    //   github: 'github',
+    //   deploy: 'deploy',
+    // },
   ];
   return (
     <section className="sectionProjects">
