@@ -92,8 +92,12 @@ const Slider = ({ elems }: IProjects) => {
       <div className="slider__description">
         <h3 className="slider__descelem slider__desc">Description: {el.desc}</h3>
         <h3 className="slider__descelem slider__stack">Stack: {el.stack}</h3>
-        <h3 className="slider__descelem slider__github">Github link: {el.github}</h3>
-        <h3 className="slider__descelem slider__deploy">Deploy link: {el.deploy}</h3>
+        <h3 className="slider__descelem slider__github">
+          Github link: <a href={el.github}>{el.github}</a>
+        </h3>
+        <h3 className="slider__descelem slider__deploy">
+          Deploy link: <a href={el.deploy}>{el.deploy}</a>
+        </h3>
       </div>
     </div>
   );
