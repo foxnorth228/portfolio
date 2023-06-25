@@ -35,28 +35,25 @@ const Slider = ({ elems }: IProjects) => {
 
   const startSlideAnimation = useCallback(
     (num: number) => {
-      console.log(animationCount.current.length);
       animationCount.current.pop();
-      console.log(animationCount.current.length);
       setCurrTransition('left 1.4s ease-out');
       setCurrLeftPos(num === 1 ? '0%' : '-100%');
-      console.log(isAnimAllowed.current);
     },
     [animationCount]
   );
 
   const registerSlideAnimation = useCallback(
     (startPos: string, animRotation: number) => {
-      animationCount.current.push(animRotation);
-      console.log(isAnimAllowed.current);
       if (
-        !isAnimAllowed.current ||
         (animRotation === 1 && indexCurrElem.current === 0) ||
         (animRotation === -1 && indexCurrElem.current === elems.length - 1)
       ) {
         return;
       }
-
+      animationCount.current.push(animRotation);
+      if (!isAnimAllowed.current) {
+        return;
+      }
       isAnimAllowed.current = false;
       changeCurrElem(-animRotation);
       setisMoveLeft(animRotation);
