@@ -1,10 +1,28 @@
+@mixin arrow-size($arrow-ratio) {
+    width: calc(18px * $arrow-ratio);
+    height: calc(17px * $arrow-ratio);
+    background-size: calc(18px * 3 * $arrow-ratio)  calc(17px * $arrow-ratio);
+}
+
 .arrow {
-    flex: 1 1 54px;
-    width: 54px;
-    height: 51px;
     background: linear-gradient(270deg, black 0%, black 33%, rgb(128, 128, 128) 33%, rgb(128, 128, 128) 66%, black 66%, black 100%);
-    background-size: 162px 51px;
+    @include arrow-size(3);
     animation: 2.4s ease-in-out infinite;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        @include arrow-size(2.75);
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        @include arrow-size(2.5);
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        @include arrow-size(2.25);
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        @include arrow-size(2);
+    }
+    @media (max-width: 480px) {
+        @include arrow-size(1.75);
+    }
 }
 
 .arrow:hover {
@@ -14,12 +32,19 @@
 
 .arrow__left {
     grid-area: 2 / 1 / span 1 / span 3;
+    @media (max-width: 768px) {
+        grid-area: 3 / 8 / span 1 / span 3;
+    }
     mask-image: url("@assets/arrow-left.svg");
     -webkit-mask-image: url("@assets/arrow-left.svg");
 }
 
 .arrow__right {
     grid-area: 2 / 18 / span 1 / span 3;
+    @media (max-width: 768px) {
+        margin: 15px 0;
+        grid-area: 3 / 12 / span 1 / span 3;
+    }
     mask-image: url("@assets/arrow-right.svg");
     -webkit-mask-image: url("@assets/arrow-right.svg");
     animation-direction: reverse;
@@ -27,15 +52,15 @@
 
 @keyframes arrow {
     0% {
-        background-position: 162px 0px;
+        background-position: -150% 0px;
         transform: scale(1);
     }
     50% {
-        background-position: 108px 0px;
+        background-position: -100% 0px;
         transform: scale(1.2);
     }
     100% {
-        background-position: 54px 0px;
+        background-position: -50% 0px;
         transform: scale(1);
     }
 }

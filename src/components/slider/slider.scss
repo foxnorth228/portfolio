@@ -7,6 +7,15 @@
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(3, min-content);
+    @media (min-width: 768px) and (max-width: 1200px) {
+        width: 86%;
+    }
+    @media (max-width: 767px) {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: repeat(4, min-content);
+    }
     justify-items: center;
     align-items: center;
 }
@@ -35,6 +44,9 @@
 
 .slider__imageBlock {
     grid-area: 2 / 4 / span 1 / span 14;
+    @media (max-width: 768px) {
+        grid-area: 2 / 2 / span 1 / span 18;
+    }
     width: 100%;
     height: min-content;
     position: relative;
@@ -70,6 +82,9 @@
 
 .slider__description {
     grid-area: 3 / 4 / span 1 / span 14;
+    @media (max-width: 768px) {
+        grid-area: 4 / 2 / span 1 / span 18;
+    }
     height: 100%;
     width: 100%;
     line-height: 1;
