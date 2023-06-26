@@ -4,6 +4,7 @@ import './slider_arrows.scss';
 
 interface IProject {
   src: string;
+  filetype: string;
   title: string;
   desc: string;
   stack: string;
@@ -68,6 +69,8 @@ const Slider = ({ elems }: IProjects) => {
   const el = elems[indexCurrElem.current];
   const prevElem = elems[indexPrevElem.current];
   const [moveImg, staticImg] = isMoveLeft === 1 ? [el.src, prevElem.src] : [prevElem.src, el.src];
+  const [moveType, staticType] =
+    isMoveLeft === 1 ? [el.filetype, prevElem.filetype] : [prevElem.filetype, el.filetype];
   return (
     <div className="slider">
       <h2 className="slider__title">{el.title}</h2>
@@ -84,9 +87,16 @@ const Slider = ({ elems }: IProjects) => {
           }}
           style={{ left: currLeftPos, transition: currTransition }}
           className="slider__nextimage"
-          src={`${moveImg}`}
+          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
+          sizes="100%"
+          src={`${moveImg}-1920.${moveType}`}
         ></img>
-        <img className="slider__image" src={`${staticImg}`}></img>
+        <img
+          className="slider__image"
+          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
+          sizes="100%"
+          src={`${staticImg}-1920.${staticType}`}
+        ></img>
       </div>
       <div onClick={() => registerSlideAnimation('0%', -1)} className="arrow arrow__right" />
       <div className="slider__description">

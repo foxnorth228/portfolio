@@ -13,9 +13,24 @@
 
 .slider__title {
     grid-area: 1 / 1 / span 1 / span 20;
-    font-size: 32px;
+    font-size: 28px;
     margin: 0;
     margin-bottom: 40px;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 26px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 24px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        font-size: 22px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        font-size: 20px;
+    }
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
 }
 
 .slider__imageBlock {
@@ -25,6 +40,8 @@
     position: relative;
     display: flex;
     overflow: hidden;
+    transition: box-shadow 1.2s ease;
+    box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0);
 }
 
 .slider__imageBlock:hover {
@@ -56,7 +73,6 @@
     height: 100%;
     width: 100%;
     line-height: 1;
-    font-size: 20px;
     margin-left: 0;
     max-height: 0; 
     overflow: hidden; 
@@ -64,5 +80,21 @@
 }
 
 .slider__descelem {
+    font-size: 24px;
     margin-bottom: 0;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 22px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 20px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        font-size: 18px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        font-size: 15px;
+    }
+    @media (max-width: 480px) {
+        font-size: 12px;
+    }
 }

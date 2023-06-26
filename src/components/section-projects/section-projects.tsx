@@ -5,9 +5,10 @@ import Slider from '@components/slider/slider';
 const SectionProjects = () => {
   const projects = [
     {
-      src: 'projects/green-api.png',
+      src: 'projects/green-api/green-api',
+      filetype: 'png',
       title: 'Green API Chat',
-      desc: 'Green API (russian API) that we can use to send messages throw Whatsapp',
+      desc: 'Green API (russian API) that we can use to send messages via Whatsapp',
       stack: 'React, Typescript, SASS/SCSS',
       github: 'https://github.com/foxnorth228/green-api-chat',
       deploy: 'https://master--thunderous-pothos-af6dd7.netlify.app/',
