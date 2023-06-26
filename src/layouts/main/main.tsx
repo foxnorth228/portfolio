@@ -2,7 +2,8 @@ import React from 'react';
 import './main.scss';
 import SectionWelcome from '@components/section-welcome/section-welcome';
 import SectionAbout from '@components/section-about/section-about';
-import SectionSkills from '@src/components/section-skills/section-skills';
+import SectionSkills from '@components/section-skills/section-skills';
+import SectionProjects from '@components/section-projects/section-projects';
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
       <SectionWelcome />
       <SectionAbout />
       <SectionSkills />
+      <SectionProjects />
     </main>
   );
 };
