@@ -51,6 +51,10 @@
     &:hover {
         box-shadow: inset 0 0 18px -6px rgba(0, 0, 0, 1);
     }
+    @media (max-width: 767px) {
+        border-radius: 16px;
+        border: 2px solid rgba(0, 0, 0, 0);
+    }
 }
 
 .contactForm__input {
@@ -65,7 +69,7 @@
     @include mix.formInput();
     @include mix.gradiendBorder($gradient);
     @media (min-width: 481px) and (max-width: 767px) {
-        @include mix.gradiendBorder(l$gradient, "@assets/rounded-rect2.svg");   
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg");   
     }
     @media (max-width: 480px) {
         @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg"); 
@@ -113,6 +117,7 @@
     height: 64px;
     $gradient: linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%);
     margin-top: 48px;
+    padding: 0;
     @include mix.gradiendBorder($gradient, "@assets/rounded-rect10.svg");
     &:hover {
         cursor: pointer;
@@ -143,21 +148,30 @@
 }
 
 .contactForm__label {
-    width: calc(100% - 8px);
-    height: calc(100% - 18px);
+    width: 100%;
+    height: 100%;
     position: relative;
-    z-index: 2;
     background-color: white;
+    box-sizing: border-box;
+    border: 10px solid rgba(0, 0, 0, 0);
     border-radius: 28px;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 0 0 6px 0px rgba(0, 0, 0, 0.0);
+    box-shadow: inset 0 0 18px -6px rgba(0, 0, 0, 0);
     transition: box-shadow 1.2s ease-out;
+    @media (min-width: 481px) and (max-width: 991px) {
+        border-radius: 16px;
+        border: 5px solid rgba(0, 0, 0, 0);
+    }
+    @media (max-width: 480px) {
+        border-radius: 16px;
+        border: 2px solid rgba(0, 0, 0, 0);
+    }
     .contactForm__button_submit:hover & {
         cursor: pointer;
-        box-shadow: inset 0 0 6px 0px rgba(0, 0, 0, 0.95);
+        box-shadow: inset 0 0 18px -6px rgba(0, 0, 0, 1);
     }
     @include mix.text();
 }
