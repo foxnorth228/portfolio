@@ -1,13 +1,11 @@
 import React from 'react';
 import './footer.scss';
-import ContactForm from '@components/contact-form/contact-form';
-import ContactsFooter from '@components/contacts-footer/contacts-footer';
+import SectionContacts from '@src/components/section-contacts/section-contacts';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <ContactForm />
-      <ContactsFooter />
+      <SectionContacts />
       <div className="footer__blocks">
         <div className="footer__block footer__block1" />
         <div className="footer__block footer__block2" />

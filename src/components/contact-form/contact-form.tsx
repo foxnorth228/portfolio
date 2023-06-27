@@ -2,6 +2,7 @@ import React from 'react';
 import './contact-form.scss';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import { Element } from 'react-scroll';
 
 const ContactForm = () => {
   const {
@@ -28,6 +29,7 @@ const ContactForm = () => {
   };
   return (
     <section className="contactForm">
+      <Element name="ContactForm" />
       <img className="contactForm__image" src="footer-image.png" alt="footer-image" />
       <form onSubmit={handleSubmit(onSubmit)} className="contactForm__form">
         <div className="contactForm__name">

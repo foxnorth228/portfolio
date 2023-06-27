@@ -1,6 +1,7 @@
 import React from 'react';
 import './contacts.scss';
 import Icon from '@components/icon/icon';
+import { scroller } from 'react-scroll';
 
 const Contacts = ({ isButton }: { isButton: boolean }) => {
   const links = [
@@ -17,7 +18,20 @@ const Contacts = ({ isButton }: { isButton: boolean }) => {
           <Icon link={el[1]} className={el[2]} />
         </a>
       ))}
-      {isButton && <button className="contacts__button">{"Let's connect"}</button>}
+      {isButton && (
+        <button
+          onClick={() => {
+            scroller.scrollTo('ContactForm', {
+              duration: 2000,
+              smooth: 'easeInOutQuad',
+              offset: -200,
+            });
+          }}
+          className="contacts__button"
+        >
+          {"Let's connect"}
+        </button>
+      )}
     </article>
   );
 };

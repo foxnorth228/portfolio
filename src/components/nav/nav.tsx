@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link, animateScroll as scroll } from 'react-scroll';
+
 import './nav.scss';
 
 const Nav = () => {
@@ -13,9 +15,11 @@ const Nav = () => {
         <p className="nav__menu">Menu</p>
       ) : (
         <>
-          <p className="nav__link">Home</p>
-          <p className="nav__link">Projects</p>
-          <p className="nav__link">Skills</p>
+          <Link className="nav__link" to="section_projects" smooth="easeInOutQuad" duration={1600}>Projects</Link>
+          <Link className="nav__link" to="section_skills" smooth="easeInOutQuad" duration={1800}>Skills</Link>
+          <Link className="nav__link" to="section_contacts" smooth="easeInOutQuad" offset={-200} duration={2000}>
+            Contacts
+          </Link>
         </>
       )}
     </nav>

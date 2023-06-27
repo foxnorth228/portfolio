@@ -31,7 +31,7 @@ const SectionProjects = () => {
     // },
   ];
   return (
-    <section className="sectionProjects">
+    <section id="section_projects" className="sectionProjects">
       <h1 className="sectionProjects__title">Projects</h1>
       <Slider elems={projects} />
     </section>

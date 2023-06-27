@@ -4,7 +4,7 @@ import SkillList from '../skillList/skillList';
 
 const SectionSkills = () => {
   return (
-    <section className="sectionSkills">
+    <section id="section_skills" className="sectionSkills">
       <div className="sectionSkills__block">
         <h1 className="sectionSkills__title">Skills</h1>
         <SkillList />
