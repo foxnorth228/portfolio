@@ -1,3 +1,5 @@
+@use './mixins.scss' as mix;
+
 .contactForm {
     width: 100%;
     display: flex;
@@ -8,235 +10,145 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-left: -100px;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        margin-left: -80px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        margin-left: -60px;
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        margin-left: -50px;
-    }
-    @media (max-width: 480px) {
-        margin-left: -33px;
-    }
 }
 
 .contactForm__image {
-    margin-top: 148px;
     width: 550px;
+    margin-top: 148px;
+    margin-right: -85px;
     @media (min-width: 992px) and (max-width: 1199px) { 
-        margin-top: 125px;
         width: 450px;
+        margin-top: 127px;
+        margin-right: -73px;
     }
     @media (min-width: 768px) and (max-width: 991px) {
-        margin-top: 125px;
         width: 330px;
+        margin-top: 122px;
+        margin-right: -58px;
     }
     @media (min-width: 481px) and (max-width: 767px) {
-        margin-top: 105px;
         width: 270px;
+        margin-top: 105px;
+        margin-right: -45px;
     }
     @media (max-width: 480px) {
-        margin-top: 65px;
         width: 200px;
+        margin-top: 65px;
+        margin-right: -37px;
     }
 }
 
-@mixin gradiendBorder($gradient, $svg-url: "@assets/rounded-rect3.svg") {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0;
-    background: rgba(0, 0, 0, 0);
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        mask: url($svg-url) center center / cover no-repeat;
-        -webkit-mask: url($svg-url) center center / cover no-repeat;
-        background-image: $gradient;
-    }
-}
-
-@mixin text {
-    font-family: 'Lexend';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 30px;
-    @media (min-width: 992px) and (max-width: 1199px) { 
-        font-size: 20px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 16px
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        font-size: 14px;   
-    }
-    @media (max-width: 480px) {
-        font-size: 11px;
-    }
-}
-
-@mixin inputText {
+.contactForm__inputBlock {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    border: 3px solid rgba(0, 0, 0, 0);
     border-radius: 28px;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    padding-left: 12px;
-    border: 0;
-    @include text();
+    box-shadow: inset 0 0 13px -6px rgba(0, 0, 0, 0.0);
+    transition: box-shadow 1.3s ease-out;
     &:hover {
-        cursor: pointer;
-    }
-    &:focus {
-        outline: none;
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        padding-left: 10px;
-    }
-    @media (max-width: 480px) {
-        padding-left: 7px;
-    }
-}
-
-.contactForm__name {
-    width: 28.1vw;
-    height: 64px;
-    @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(46, 137, 13, 0.89) 100.5%));
-    @media (min-width: 992px) and (max-width: 1199px) { 
-        height: 54px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        height: 44px;
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        width: 32.1vw;
-        height: 34px;
-        @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(46, 137, 13, 0.89) 100.5%), "@assets/rounded-rect2.svg");   
-    }
-    @media (max-width: 480px) {
-        width: 34.1vw;
-        height: 24px;
-        @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(46, 137, 13, 0.89) 100.5%), "@assets/rounded-rect2.svg"); 
-    }
-}
-
-.contactForm__name:-webkit-autofill {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.contactForm__email {
-    width: 28.1vw;
-    height: 64px;
-    margin-top: 22px;
-    @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(97, 0, 255, 0.89) 100.5%));
-    @media (min-width: 992px) and (max-width: 1199px) { 
-        height: 54px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        height: 44px;
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        width: 32.1vw;
-        height: 34px;   
-        @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(97, 0, 255, 0.89) 100.5%), "@assets/rounded-rect2.svg");  
-    }
-    @media (max-width: 480px) {
-        width: 34.1vw;
-        height: 24px;
-        margin-top: 10px;
-        @include gradiendBorder(linear-gradient(93.67deg, #C0BB36 46.98%, rgba(97, 0, 255, 0.89) 100.5%), "@assets/rounded-rect2.svg");  
-    }
-}
-
-.contactForm__email:-webkit-autofill,
-.contactForm__email:-webkit-autofill:focus {
-    background-color: rgba(0, 0, 0, 0) !important;
-}
-
-.contactForm__message {
-    width: 28.1vw;
-    height: 240px;
-    margin-top: 22px;
-    @include gradiendBorder(linear-gradient(93.67deg, #C0369A 46.98%, rgba(14, 41, 136, 0.890802) 100.49%, rgba(46, 137, 13, 0.89) 100.5%));
-    @media (min-width: 992px) and (max-width: 1199px) { 
-        height: 200px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        height: 160px;
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        width: 32.1vw;
-        height: 120px;   
-        @include gradiendBorder(linear-gradient(93.67deg, #C0369A 46.98%, rgba(14, 41, 136, 0.890802) 100.49%, rgba(46, 137, 13, 0.89) 100.5%), "@assets/rounded-rect2.svg");  
-    }
-    @media (max-width: 480px) {
-        margin-top: 10px;
-        width: 34.1vw;
-        height: 90px;
-        @include gradiendBorder(linear-gradient(93.67deg, #C0369A 46.98%, rgba(14, 41, 136, 0.890802) 100.49%, rgba(46, 137, 13, 0.89) 100.5%), "@assets/rounded-rect2.svg"); 
+        box-shadow: inset 0 0 18px -6px rgba(0, 0, 0, 1);
     }
 }
 
 .contactForm__input {
-    transition: background-color 1.3s ease-out;
-    &:hover, &:active {
-        background-color:  rgba(0, 0, 0, 0.1);
-    }
     @media (max-width: 480px) {
         border-radius: 16px;
     }
-    @include inputText();
+    @include mix.inputText();
+}
+
+.contactForm__name {
+    $gradient: linear-gradient(93.67deg, #C0BB36 46.98%, rgba(46, 137, 13, 0.89) 100.5%);
+    @include mix.formInput();
+    @include mix.gradiendBorder($gradient);
+    @media (min-width: 481px) and (max-width: 767px) {
+        @include mix.gradiendBorder(l$gradient, "@assets/rounded-rect2.svg");   
+    }
+    @media (max-width: 480px) {
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg"); 
+    }
+}
+
+.contactForm__email {
+    $gradient: linear-gradient(93.67deg, #C0BB36 46.98%, rgba(97, 0, 255, 0.89) 100.5%);
+    margin-top: 22px;
+    @include mix.formInput();
+    @include mix.gradiendBorder($gradient);
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 17px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {   
+        margin-top: 15px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg");  
+    }
+    @media (max-width: 480px) {
+        margin-top: 10px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg");  
+    }
+}
+
+.contactForm__message {
+    $gradient: linear-gradient(93.67deg, #C0369A 46.98%, rgba(14, 41, 136, 0.890802) 100.49%, rgba(46, 137, 13, 0.89) 100.5%);
+    margin-top: 22px;
+    @include mix.formInput(4);
+    @include mix.gradiendBorder($gradient);
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 17px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) { 
+        margin-top: 15px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg");  
+    }
+    @media (max-width: 480px) {
+        margin-top: 10px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg"); 
+    }
 }
 
 .contactForm__button_submit {
-    width: 12.1vw;
+    width: 145px;
     height: 64px;
+    $gradient: linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%);
     margin-top: 48px;
-    @include gradiendBorder(linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%), "@assets/rounded-rect10.svg");
+    @include mix.gradiendBorder($gradient, "@assets/rounded-rect10.svg");
     &:hover {
         cursor: pointer;
     }
     @media (min-width: 992px) and (max-width: 1199px) { 
+        width: 125px;
         height: 54px;
+        margin-top: 38px;
     }
     @media (min-width: 768px) and (max-width: 991px) {
-        height: 44px;
-        @include gradiendBorder(linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%), "@assets/rounded-rect5.svg");  
+        width: 105px;
+        height: 40px;
+        margin-top: 28px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect5.svg");  
     }
     @media (min-width: 481px) and (max-width: 767px) {
-        margin-top: 38px;
+        width: 75px;
         height: 34px;   
-        @include gradiendBorder(linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%), "@assets/rounded-rect5.svg");  
+        margin-top: 23px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect5.svg");  
     }
     @media (max-width: 480px) {
-        margin-top: 16px;
+        width: 50px;
         height: 24px;
-        @include gradiendBorder(linear-gradient(93.67deg, #C036AA 46.98%, rgba(137, 95, 13, 0.89) 100.5%), "@assets/rounded-rect2.svg"); 
-    }
-}
-
-.contactForm__textarea {
-    @media (max-width: 767px) {
-        border-radius: 16px;
+        margin-top: 16px;
+        @include mix.gradiendBorder($gradient, "@assets/rounded-rect2.svg"); 
     }
 }
 
 .contactForm__label {
+    width: calc(100% - 8px);
+    height: calc(100% - 18px);
     position: relative;
     z-index: 2;
     background-color: white;
     border-radius: 28px;
-    width: calc(100% - 8px);
-    height: calc(100% - 18px);
     color: black;
     display: flex;
     justify-content: center;
@@ -247,7 +159,7 @@
         cursor: pointer;
         box-shadow: inset 0 0 6px 0px rgba(0, 0, 0, 0.95);
     }
-    @include text();
+    @include mix.text();
 }
 
 .contactForm__validationError {

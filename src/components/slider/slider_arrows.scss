@@ -32,7 +32,7 @@
 
 .arrow__left {
     grid-area: 2 / 1 / span 1 / span 3;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         grid-area: 3 / 8 / span 1 / span 3;
     }
     mask-image: url("@assets/arrow-left.svg");
@@ -41,7 +41,7 @@
 
 .arrow__right {
     grid-area: 2 / 18 / span 1 / span 3;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         margin: 15px 0;
         grid-area: 3 / 12 / span 1 / span 3;
     }

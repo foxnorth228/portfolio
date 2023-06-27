@@ -44,7 +44,7 @@
 
 .slider__imageBlock {
     grid-area: 2 / 4 / span 1 / span 14;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         grid-area: 2 / 2 / span 1 / span 18;
     }
     width: 100%;

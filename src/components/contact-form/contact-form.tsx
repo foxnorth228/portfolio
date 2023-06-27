@@ -31,15 +31,17 @@ const ContactForm = () => {
       <img className="contactForm__image" src="footer-image.png" alt="footer-image" />
       <form onSubmit={handleSubmit(onSubmit)} className="contactForm__form">
         <div className="contactForm__name">
-          <input
-            className="contactForm__input"
-            type="text"
-            placeholder="Name..."
-            {...register('name', {
-              required: true,
-              minLength: 4,
-            })}
-          />
+          <div className="contactForm__inputBlock">
+            <input
+              className="contactForm__input"
+              type="text"
+              placeholder="Name..."
+              {...register('name', {
+                required: true,
+                minLength: 4,
+              })}
+            />
+          </div>
           <div className="contactForm__validationError">
             {errors.name &&
               (errors.name.type === 'required'
@@ -48,14 +50,16 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="contactForm__email">
-          <input
-            className="contactForm__input"
-            type="email"
-            placeholder="Email..."
-            {...register('email', {
-              required: true,
-            })}
-          />
+          <div className="contactForm__inputBlock">
+            <input
+              className="contactForm__input"
+              type="email"
+              placeholder="Email..."
+              {...register('email', {
+                required: true,
+              })}
+            />
+          </div>
           <div className="contactForm__validationError">
             {errors.email &&
               (errors.email.type === 'required'
@@ -64,13 +68,15 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="contactForm__message">
-          <textarea
-            className="contactForm__input"
-            placeholder="Message..."
-            {...register('message', {
-              required: true,
-            })}
-          />
+          <div className="contactForm__inputBlock">
+            <textarea
+              className="contactForm__input"
+              placeholder="Message..."
+              {...register('message', {
+                required: true,
+              })}
+            />
+          </div>
           <div className="contactForm__validationError">
             {errors.message &&
               (errors.message.type === 'required'

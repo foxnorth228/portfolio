@@ -1,0 +1,81 @@
+@mixin gradiendBorder($gradient, $svg-url: "@assets/rounded-rect3.svg") {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        mask: url($svg-url) center center / cover no-repeat;
+        -webkit-mask: url($svg-url) center center / cover no-repeat;
+        background-image: $gradient;
+    }
+}
+
+@mixin text {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    @media (min-width: 992px) and (max-width: 1199px) { 
+        font-size: 20px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 16px
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        font-size: 14px;   
+    }
+    @media (max-width: 480px) {
+        font-size: 11px;
+    }
+}
+
+@mixin inputText {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    border: 0;
+    @include text();
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        padding-left: 0 10px;
+    }
+    @media (max-width: 480px) {
+        padding-left: 0 7px;
+    }
+}
+
+@mixin formInput($height-scale: 1) {
+    width: 350px;
+    height: 64px * $height-scale;
+    @media (min-width: 992px) and (max-width: 1199px) { 
+        width: 310px;
+        height: 54px  * $height-scale;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 260px;
+        height: 44px  * $height-scale;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        width: 200px;
+        height: 34px  * $height-scale;  
+    }
+    @media (max-width: 480px) {
+        width: 135px;
+        height: 24px  * $height-scale;
+    }
+}
