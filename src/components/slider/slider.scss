@@ -21,24 +21,25 @@
 }
 
 .slider__title {
+    font-family: Lexend;
     grid-area: 1 / 1 / span 1 / span 20;
-    font-size: 28px;
+    font-size: 26px;
     margin: 0;
     margin-bottom: 40px;
     @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 26px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
         font-size: 24px;
     }
-    @media (min-width: 601px) and (max-width: 767px) {
+    @media (min-width: 768px) and (max-width: 991px) {
         font-size: 22px;
     }
-    @media (min-width: 481px) and (max-width: 600px) {
+    @media (min-width: 601px) and (max-width: 767px) {
         font-size: 20px;
     }
-    @media (max-width: 480px) {
+    @media (min-width: 481px) and (max-width: 600px) {
         font-size: 18px;
+    }
+    @media (max-width: 480px) {
+        font-size: 16px;
     }
 }
 
@@ -95,19 +96,20 @@
 }
 
 .slider__descelem {
-    font-size: 24px;
+    font-family: Lexend;
+    font-size: 22px;
     margin-bottom: 0;
     @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 22px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 20px;
-    }
-    @media (min-width: 601px) and (max-width: 767px) {
         font-size: 18px;
     }
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 16px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        font-size: 14px;
+    }
     @media (min-width: 481px) and (max-width: 600px) {
-        font-size: 15px;
+        font-size: 14px;
     }
     @media (max-width: 480px) {
         font-size: 12px;

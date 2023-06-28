@@ -7,7 +7,7 @@
     overflow: hidden;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 3fr 5fr;
     align-items: center;
     justify-items: center;
     @media (min-width: 992px) and (max-width: 1199px) {
@@ -18,17 +18,20 @@
         margin-top: 0px;
         height: 300px;
     }
+    @media (max-width: 767px) {
+        display: block;
+    }
     @media (min-width: 601px) and (max-width: 767px) {
-        margin-top: 0px;
-        height: 270px;
+        margin-top: 10px;
+        height: fit-content;
     }
     @media (min-width: 481px) and (max-width: 600px) {
-        margin-top: 0;
-        height: 210px;
+        margin-top: 7px;
+        height: fit-content;
     }
     @media (max-width: 480px) {
         margin-top: 0;
-        height: 140px;
+        height: fit-content;
     }
 }
 
@@ -36,20 +39,27 @@
     @media (min-width: 768px) and (max-width: 991px) {
         height: 90%;
     }
+    @media (max-width: 767px) {
+        float: left;
+        margin-right: 10px;
+    }
     @media (min-width: 601px) and (max-width: 767px) {
-        height: 80%;
+        width: 200px;
+        height: auto;
     }
     @media (min-width: 481px) and (max-width: 600px) {
-        height: 75%;
+        width: 170px;
+        height: auto;
     }
     @media (max-width: 480px) {
-        height: 70%;
+        width: 140px;
+        height: auto;
     }
     grid-column: 1 / span 1;
 }
 
 .authorFace__text {
-    width: 80%;
+    width: 90%;
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 400;
@@ -58,23 +68,25 @@
     justify-self: start;
     grid-column: 2 / span 1;
     @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 19px;
-        width: 85%;
+        font-size: 18px;
+        width: 92%;
     }
     @media (min-width: 768px) and (max-width: 991px) {
         font-size: 16px;
         width: 95%;
     }
     @media (min-width: 601px) and (max-width: 767px) {
-        font-size: 13px;
-        width: 95%;
+        justify-self: center;
+        font-size: 14px;
+        width: 98%;
     }
     @media (min-width: 481px) and (max-width: 600px) {
-        font-size: 11px;
-        width: 95%;
+        justify-self: center;
+        font-size: 13px;
+        width: 98%;
     }
     @media (max-width: 480px) {
-        font-size: 8px;
-        width: 95%;
+        font-size: 12px;
+        width: 98%;
     }
 }

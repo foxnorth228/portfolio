@@ -69,7 +69,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: './src/assets', to: '' }, // <- your path to favicon
+        { from: './src/assets', to: '' },
       ],
     }),
     new Dotenv({
