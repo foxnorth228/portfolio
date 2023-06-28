@@ -34,7 +34,7 @@ const Contacts = ({ isButton }: { isButton: boolean }) => {
   return (
     <article className="contacts">
       {links.map((el, i) => (
-        <a key={i} href={el[0]} className="contacts__link">
+        <a aria-label={el[3]} key={i} href={el[0]} className="contacts__link">
           <Icon link={el[1]} className={el[2]} />
         </a>
       ))}
