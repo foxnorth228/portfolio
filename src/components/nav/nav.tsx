@@ -14,7 +14,7 @@ const Nav = () => {
       {isMaxWidth480 ? (
         <label className="nav__menu">
           <input className="nav__menu_checkbox" type="checkbox" />
-          <span className="nav__menu_title">Menu</span>
+          <span className="nav__menu_title"></span>
           <div className="nav__manu_elems">
             <Link
               className="nav__link"

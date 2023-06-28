@@ -2,6 +2,7 @@ import React from 'react';
 import Vector1 from '@assets/vector1.svg';
 import './authorFace.scss';
 
+//add floating
 const AuthorFace = () => {
   return (
     <figure className="authorFace">
