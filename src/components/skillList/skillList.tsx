@@ -17,7 +17,12 @@ const SkillList = () => {
     <div className="skillList">
       {skill_list.map((el, i) => (
         <figure key={i} className="skill">
-          <img alt={`${el[0]}-svg`} src={`skills/${el[0]}`} className="skill__image"></img>
+          <img
+            loading="lazy"
+            alt={`${el[0]}-svg`}
+            src={`skills/${el[0]}`}
+            className="skill__image"
+          ></img>
           <figcaption className="skill__text">{el[1]}</figcaption>
         </figure>
       ))}

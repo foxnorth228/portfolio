@@ -48,13 +48,26 @@ const Nav = () => {
         </label>
       ) : (
         <>
-          <Link className="nav__link" to="section_projects" smooth="easeInOutQuad" duration={1600}>
+          <Link
+            href="#section_projects"
+            className="nav__link"
+            to="section_projects"
+            smooth="easeInOutQuad"
+            duration={1600}
+          >
             Projects
           </Link>
-          <Link className="nav__link" to="section_skills" smooth="easeInOutQuad" duration={1800}>
+          <Link
+            href="#section_skills"
+            className="nav__link"
+            to="section_skills"
+            smooth="easeInOutQuad"
+            duration={1800}
+          >
             Skills
           </Link>
           <Link
+            href="#section_contacts"
             className="nav__link"
             to="section_contacts"
             smooth="easeInOutQuad"

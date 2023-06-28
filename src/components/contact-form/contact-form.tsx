@@ -12,7 +12,6 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' });
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log('send');
     const answer = {
       from_name: data.name,
       to_name: 'Alek',
@@ -33,6 +32,7 @@ const ContactForm = () => {
       <img
         width="100%"
         height="100%"
+        loading="lazy"
         className="contactForm__image"
         src="footer-image.webp"
         alt="footer-image"

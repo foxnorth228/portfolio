@@ -87,6 +87,7 @@ const Slider = ({ elems }: IProjects) => {
           }}
           style={{ left: currLeftPos, transition: currTransition }}
           className="slider__nextimage"
+          loading="lazy"
           alt="animation-slide"
           src={`${moveImg}-1920.${moveType}`}
           srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
@@ -94,6 +95,7 @@ const Slider = ({ elems }: IProjects) => {
         ></img>
         <img
           className="slider__image"
+          loading="lazy"
           alt="static-slide"
           src={`${staticImg}-1920.${staticType}`}
           srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
