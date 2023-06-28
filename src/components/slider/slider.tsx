@@ -87,15 +87,17 @@ const Slider = ({ elems }: IProjects) => {
           }}
           style={{ left: currLeftPos, transition: currTransition }}
           className="slider__nextimage"
-          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
-          sizes="100%"
+          alt="animation-slide"
           src={`${moveImg}-1920.${moveType}`}
+          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
+          sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px"
         ></img>
         <img
           className="slider__image"
-          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
-          sizes="100%"
+          alt="static-slide"
           src={`${staticImg}-1920.${staticType}`}
+          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
+          sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px"
         ></img>
       </div>
       <div onClick={() => registerSlideAnimation('0%', -1)} className="arrow arrow__right" />

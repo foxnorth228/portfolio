@@ -10,8 +10,10 @@ const SectionWelcome = () => {
       </div>
       <div className="sectionWelcome__pictureContainer">
         <img
+          width="100%"
+          height="100%"
           alt="programmer-picture"
-          src="programmer-picture.png"
+          src="programmer-picture.webp"
           className="sectionWelcome__picture"
         ></img>
       </div>

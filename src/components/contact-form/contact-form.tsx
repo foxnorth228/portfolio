@@ -30,7 +30,13 @@ const ContactForm = () => {
   return (
     <section className="contactForm">
       <Element name="ContactForm" />
-      <img className="contactForm__image" src="footer-image.png" alt="footer-image" />
+      <img
+        width="100%"
+        height="100%"
+        className="contactForm__image"
+        src="footer-image.webp"
+        alt="footer-image"
+      />
       <form onSubmit={handleSubmit(onSubmit)} className="contactForm__form">
         <div className="contactForm__name">
           <div className="contactForm__inputBlock">

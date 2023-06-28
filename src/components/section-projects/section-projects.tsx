@@ -6,7 +6,7 @@ const SectionProjects = () => {
   const projects = [
     {
       src: 'projects/green-api/green-api',
-      filetype: 'png',
+      filetype: 'webp',
       title: 'Green API Chat',
       desc: 'Green API (russian API) that we can use to send messages via Whatsapp',
       stack: 'React, Typescript, SASS/SCSS',
