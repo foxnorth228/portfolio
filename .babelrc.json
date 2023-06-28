@@ -7,6 +7,6 @@
                 "@assets": "./src/assets"
             } 
         }],
-        "inline-react-svg",
-    ],
+        "inline-react-svg"
+    ]
 }
