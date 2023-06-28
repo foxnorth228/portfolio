@@ -2,6 +2,9 @@ const path = require('path')
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: './src/index.tsx',
@@ -26,7 +29,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$/,
@@ -71,8 +74,16 @@ module.exports = {
     }),
     new Dotenv({
       systemvars: true
-    })
+    }),
+    new MiniCssExtractPlugin(),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin(),
+      new CssMinimizerPlugin(),
+    ],
+  },
   devServer: {
     static: {
       directory: path.resolve(__dirname, './dist')
