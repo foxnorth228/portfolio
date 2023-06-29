@@ -6,7 +6,9 @@ const SectionWelcome = () => {
     <section className="sectionWelcome">
       <div className="sectionWelcome__text">
         <p className="sectionWelcome__welcomeString">Welcome to my portfolio!</p>
-        <h1 className="sectinWelcome__description">{"Hi! I'm  junior frontend react developer"}</h1>
+        <h1 className="sectinWelcome__description">
+          {"Hi! I'm a junior frontend react developer"}
+        </h1>
       </div>
       <div className="sectionWelcome__pictureContainer">
         <img
