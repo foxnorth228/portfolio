@@ -17,15 +17,6 @@ const Nav = () => {
           <span className="nav__menu_title"></span>
           <div className="nav__manu_elems">
             <Link
-              href="#section_projects"
-              className="nav__link"
-              to="section_projects"
-              smooth="easeInOutQuad"
-              duration={1600}
-            >
-              Projects
-            </Link>
-            <Link
               href="#section_skills"
               className="nav__link"
               to="section_skills"
@@ -33,6 +24,15 @@ const Nav = () => {
               duration={1800}
             >
               Skills
+            </Link>
+            <Link
+              href="#section_projects"
+              className="nav__link"
+              to="section_projects"
+              smooth="easeInOutQuad"
+              duration={1600}
+            >
+              Projects
             </Link>
             <Link
               href="#section_contacts"
@@ -49,15 +49,6 @@ const Nav = () => {
       ) : (
         <>
           <Link
-            href="#section_projects"
-            className="nav__link"
-            to="section_projects"
-            smooth="easeInOutQuad"
-            duration={1600}
-          >
-            Projects
-          </Link>
-          <Link
             href="#section_skills"
             className="nav__link"
             to="section_skills"
@@ -67,11 +58,20 @@ const Nav = () => {
             Skills
           </Link>
           <Link
+            href="#section_projects"
+            className="nav__link"
+            to="section_projects"
+            smooth="easeInOutQuad"
+            duration={1600}
+          >
+            Projects
+          </Link>
+          <Link
             href="#section_contacts"
             className="nav__link"
             to="section_contacts"
             smooth="easeInOutQuad"
-            offset={-200}
+            offset={-50}
             duration={2000}
           >
             Contacts
