@@ -20,7 +20,7 @@ npm run dev
 ```
 For code checking use this
 ```
-npm run link
+npm run lint
 ```
 or this for fixing
 ```
@@ -34,4 +34,5 @@ This site have a deploy on Netlify: https://master--moonlit-sprite-20c9ef.netlif
 Site was tested by Pagespeed Insights and Webpagetest:
 - PageSpeed Mobile : ![image](https://github.com/foxnorth228/portfolio/assets/102675886/36f90d63-1908-440a-b129-52b823adc232) ![image](https://github.com/foxnorth228/portfolio/assets/102675886/815e9563-efdf-4d44-bfb8-43a0aec2ed73)   
 - PageSpeed Desctop: ![image](https://github.com/foxnorth228/portfolio/assets/102675886/1e77bc9f-e504-4e3d-93c9-93fb41a81d0f) ![image](https://github.com/foxnorth228/portfolio/assets/102675886/5a77c0b7-2271-4886-a269-cfacba8fa6ec)
-- WebPageTest Mobile: ![image](https://github.com/foxnorth228/portfolio/assets/102675886/507d6e28-4396-479d-b2d8-58264ff00eb0) ![image](https://github.com/foxnorth228/portfolio/assets/102675886/04e0f0f0-1a85-479b-923f-e3acbbe9aad9)   
+- WebPageTest Mobile: ![image](https://github.com/foxnorth228/portfolio/assets/102675886/507d6e28-4396-479d-b2d8-58264ff00eb0)
+- WebPageTest Desctop: ![image](https://github.com/foxnorth228/portfolio/assets/102675886/04e0f0f0-1a85-479b-923f-e3acbbe9aad9)   
