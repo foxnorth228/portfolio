@@ -22,8 +22,6 @@
 
 .sectionProjects__title {
     @include temp.section__title();
-    font-family: 'Lexend';
-    font-style: normal;
     font-weight: 600;
     line-height: 60px;
 }
