@@ -22,6 +22,5 @@
 
 .sectionProjects__title {
     @include temp.section__title();
-    font-weight: 600;
     line-height: 60px;
 }
