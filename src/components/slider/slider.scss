@@ -23,24 +23,9 @@
 .slider__title {
     font-family: Lexend;
     grid-area: 1 / 1 / span 1 / span 20;
-    font-size: 26px;
+    font-size: 1.3em;
     margin: 0;
     margin-bottom: 40px;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 24px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 22px;
-    }
-    @media (min-width: 601px) and (max-width: 767px) {
-        font-size: 20px;
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        font-size: 18px;
-    }
-    @media (max-width: 480px) {
-        font-size: 16px;
-    }
 }
 
 .slider__imageBlock {
@@ -97,21 +82,6 @@
 
 .slider__descelem {
     font-family: Lexend;
-    font-size: 22px;
+    font-size: 1em;
     margin-bottom: 0;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 18px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 16px;
-    }
-    @media (min-width: 601px) and (max-width: 767px) {
-        font-size: 14px;
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        font-size: 14px;
-    }
-    @media (max-width: 480px) {
-        font-size: 12px;
-    }
 }

@@ -23,7 +23,7 @@
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: calc(1em - 3px);
     line-height: 22px;
     color: #000000;
     transition: background 1.2s ease;

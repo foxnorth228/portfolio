@@ -1,3 +1,5 @@
+@use '@components/section-template/section-template.scss' as temp;
+
 .sectionAbout {
     margin-top: 90px;
     display: flex;
@@ -18,32 +20,23 @@
 }
 
 .sectionAbout__title {
+    @include temp.section__title();
     position: relative;
     z-index: 1;
     margin: 15px 0;
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 600;
-    font-size: 40px;
     line-height: 35px;
     color: #000000;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 36px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 32px;
-    }
     @media (min-width: 601px) and (max-width: 767px) {
         margin: 10px 0;
-        font-size: 28px;
     }
     @media (min-width: 481px) and (max-width: 600px) {
         margin: 0;
-        font-size: 26px;
     }
     @media (max-width: 480px) {
         margin: 0;
-        font-size: 20px;
     }
 }
 

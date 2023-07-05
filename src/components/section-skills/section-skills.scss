@@ -1,3 +1,5 @@
+@use '@components/section-template/section-template.scss' as temp;
+
 .sectionSkills {
     margin-top: 180px;
     width: 100%;
@@ -28,30 +30,23 @@
 }
 
 .sectionSkills__title {
+    @include temp.section__title();
     margin: 45px 0 30px 0;
     color: white;
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 600;
-    font-size: 40px;
     line-height: 60px;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        font-size: 36px;
-    }
     @media (min-width: 768px) and (max-width: 991px) {
         margin: 25px 0 20px 0;
-        font-size: 32px;
     }
     @media (min-width: 601px) and (max-width: 767px) {
         margin: 15px 0 0 0;
-        font-size: 28px;
     }
     @media (min-width: 481px) and (max-width: 600px) {
         margin: 10px 0 0 0;
-        font-size: 26px;
     }
     @media (max-width: 480px) {
         margin: 10px 0 0 0;
-        font-size: 24px;
     }
 }
