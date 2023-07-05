@@ -20,6 +20,7 @@
 
 @mixin text {
     font-weight: 500;
+    font-family: inherit;
     font-size: 1rem;
     line-height: 30px;
 }
