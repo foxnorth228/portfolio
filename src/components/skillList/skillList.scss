@@ -1,10 +1,26 @@
 .skillList {
+    --skill-image-scale: 55px;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        --skill-image-scale: 50px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        --skill-image-scale: 40px;
+    }
+    @media (min-width: 601px) and (max-width: 767px) {
+        --skill-image-scale: 35px;
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        --skill-image-scale: 40px;
+    }
+    @media (max-width: 480px) {
+        --skill-image-scale: 35px;
+    }
     width: 80%;
     max-width: 850px;
     height: 90%;
     margin: 70px 0 70px 0;
     display: grid;
-    grid-template-rows: calc(55px + 1em) calc(55px + 1em);
+    grid-template-rows: repeat(2, calc(var(--skill-image-scale) + 1.7em));
     grid-template-columns: repeat(9, 1fr);
     @media (min-width: 768px) and (max-width: 991px) {
         margin: 35px 0 55px 0;
@@ -14,13 +30,15 @@
         margin: 10px 0 45px 0;
     }
     @media (max-width: 600px) {
-        grid-template-rows: repeat(3,calc(55px + 1em));
+        grid-template-rows: repeat(3, calc(var(--skill-image-scale) + 2em));
         grid-template-columns: repeat(3, 1fr);
         margin: 5px 0 30px 0;
     }
 }
 
 .skill {
+    outline: 0;
+    border: 0;
     position: relative;
     margin: 0;
     justify-self: center;
@@ -28,86 +46,62 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-@media not (max-width: 600px) {
-    $n: 10;
-    @for $i from 1 to $n {
-        .skill:nth-child(#{$i}) {
-            grid-column: $i;
+    @media not (max-width: 600px) {
+        $n: 10;
+        @for $i from 1 to $n {
+            &:nth-child(#{$i}) {
+                grid-column: $i;
+            }
+        }      
+        &:nth-child(2n) {
+            grid-row: 2;
         }
-    }
-    
-    .skill:nth-child(2n) {
-        grid-row: 2;
-    }
-}
-
-@media (max-width: 600px) {
-    .skill:nth-child(even) {
-        order: 1;
-    }
-
-    .skill:nth-child(odd) {
-        order: -1;
+    }   
+    @media (max-width: 600px) {
+        &:nth-child(even) {
+            order: 1;
+        }  
+        &:nth-child(odd) {
+            order: -1;
+        }
     }
 }
 
 .skill__image {
-    margin-top: 20px;
-    margin-bottom: -20px;
-    @media (min-width: 601px) and (max-width: 991px) {
-        margin-top: 15px;
-        margin-bottom: -15px;
-    }
-    @media (max-width: 600px) {
-        margin-top: 10px;
-        margin-bottom: -10px;
-    }
+    --skill-image-diff: 20px;
+    width: var(--skill-image-scale);
+    height: var(--skill-image-scale);
+    margin-top: var(--skill-image-diff);
+    margin-bottom: -var(--skill-image-diff);
     transition: margin-top 0.8s ease-out, margin-bottom 0.8s ease-out;
-    outline: 0;
-    border: 0;
-    width: 55px;
-    height: 55px;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        width: 50px;
-        height: 50pxs;
-    }
     @media (min-width: 768px) and (max-width: 991px) {
-        width: 40px;
-        height: 40px;
+        --skill-image-diff: 15px;
     }
     @media (min-width: 601px) and (max-width: 767px) {
-        width: 35px;
-        height: 35px;
+        --skill-image-diff: 15px;
     }
     @media (min-width: 481px) and (max-width: 600px) {
-        width: 45px;
-        height: 45px;
+        --skill-image-diff: 10px;
     }
     @media (max-width: 480px) {
-        width: 35px;
-        height: 35px;
+        --skill-image-diff: 10px;
     }
-}
-
-.skill__text {
-    position: absolute;
-    bottom: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    margin-top: 10px;
-    font-size: 1em;
-    color: white;
-}
-
-.skill:hover .skill__text {
-    visibility: visible;
-    opacity: 1;
 }
 
 .skill:hover .skill__image {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.skill__text {
+    position: absolute;
+    bottom: 0;
+    font-size: 1em;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.skill:hover .skill__text {
+    opacity: 1;
 }
