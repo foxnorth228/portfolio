@@ -11,17 +11,8 @@
     @include temp.section__title();
     position: relative;
     z-index: 1;
-    margin: 15px 0;
     color: #000000;
-    @media (min-width: 601px) and (max-width: 767px) {
-        margin: 10px 0;
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        margin: 0;
-    }
-    @media (max-width: 480px) {
-        margin: 0;
-    }
+    margin: 0;
 }
 
 .sectionAbout__image {
