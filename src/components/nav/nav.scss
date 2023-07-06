@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-self: end;
     font-size: 1em;
-    color: #000000;
 }
 
 .nav__link,
@@ -46,77 +45,4 @@
         cursor: pointer;
         transform: scaleX(1);
     }
-}
-
-.nav__menu {
-    position: relative;
-    z-index: 3;
-    background-color: rgba(0, 0, 0, 0);
-    width: 22px;
-    height: 22px;
-    margin: 0 40px 0 10px;
-}
-
-.nav__menu_checkbox {
-    width: 100%;
-    height: 100%;
-    border: none;
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-    z-index: 3;
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.nav__manu_elems {
-    position: absolute;
-    left: -50%;
-    top: 100%;
-    z-index: 2;
-    max-height: 0;
-    height: fit-content;
-    overflow: hidden;
-    transition: max-height 0.7s ease;
-}
-
-.nav__menu_title,
-.nav__menu_title::before,
-.nav__menu_title::after {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    width: 100%;
-    height: 2px;
-    background-color: #616161;
-    transition-duration: 0.7s;
-}
-
-.nav__menu_title::before {
-    content: '';
-    top: -8px;
-}
-.nav__menu_title::after {
-    content: '';
-    top: 8px;
-}
-
-.nav__menu_checkbox:checked + .nav__menu_title {
-    transform: rotate(45deg);
-}
-
-.nav__menu_checkbox:checked + .nav__menu_title::before {
-    top: 0;
-    transform: rotate(0deg);
-}
-
-.nav__menu_checkbox:checked + .nav__menu_title::after {
-    top: 0;
-    transform: rotate(90deg);
-}
-
-.nav__menu_checkbox:checked ~ .nav__manu_elems {
-    max-height: 85px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 
 import './nav.scss';
+import './nav-menu.scss';
 
 const Nav = () => {
   const maxwidth480 = '(max-width: 480px)';
