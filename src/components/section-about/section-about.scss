@@ -1,22 +1,10 @@
 @use '@components/section-template/section-template.scss' as temp;
 
 .sectionAbout {
-    margin-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        margin-top: 80px
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        margin-top: 65px;
-    }
-    @media (min-width: 601px) and (max-width: 767px) {
-        margin-top: 40px;
-    }
-    @media (max-width: 600px) {
-        margin-top: 0px;
-    }
+    @include temp.section__marginTop();
 }
 
 .sectionAbout__title {
