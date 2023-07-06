@@ -1,3 +1,4 @@
+@use "@components/contacts/contacts" as con;
 .contactsFooter {
     display: flex;
     flex-direction: row;
@@ -11,16 +12,6 @@
     }
 }
 
-.contactsFooter__link:nth-child(odd) {
-    margin-top: -3px;
-    @media (max-width: 767px) {
-        margin-top: -2px;
-    }
-}
-
-.contactsFooter__link:nth-child(even) {
-    margin-top: 3px;
-    @media (max-width: 767px) {
-        margin-top: 2px;
-    }
+.contactsFooter__link {
+    @include con.icon-top-diff();
 }

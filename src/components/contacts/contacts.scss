@@ -1,3 +1,19 @@
+@mixin icon-top-diff() {
+    &:nth-child(odd) {
+        margin-top: -3px;
+        @media (min-width: 481px) and (max-width: 767px) {
+            margin-top: 2px;
+        }
+    }
+    
+    &:nth-child(even) {
+        margin-top: 3px;
+        @media (min-width: 481px) and (max-width: 767px) {
+            margin-top: 2px;
+        }
+    }
+}
+
 .contacts {
     display: flex;
     flex-direction: row;
@@ -38,16 +54,6 @@
     }
 }
 
-.contacts__link:nth-child(odd) {
-    margin-top: -3px;
-    @media (min-width: 481px) and (max-width: 767px) {
-        margin-top: 2px;
-    }
-}
-
-.contacts__link:nth-child(even) {
-    margin-top: 3px;
-    @media (min-width: 481px) and (max-width: 767px) {
-        margin-top: 2px;
-    }
+.contacts__link {
+    @include icon-top-diff();
 }
