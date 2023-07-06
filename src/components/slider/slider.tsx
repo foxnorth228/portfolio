@@ -1,16 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import './slider.scss';
 import './slider_arrows.scss';
-
-interface IProject {
-  src: string;
-  filetype: string;
-  title: string;
-  desc: string;
-  stack: string;
-  github: string;
-  deploy: string;
-}
+import { IProject } from '@components/section-projects/section-projects';
 
 interface IProjects {
   elems: IProject[];
@@ -68,6 +59,7 @@ const Slider = ({ elems }: IProjects) => {
 
   const el = elems[indexCurrElem.current];
   const prevElem = elems[indexPrevElem.current];
+  console.log(el, prevElem, elems);
   const [moveImg, staticImg] = isMoveLeft === 1 ? [el.src, prevElem.src] : [prevElem.src, el.src];
   const [moveType, staticType] =
     isMoveLeft === 1 ? [el.filetype, prevElem.filetype] : [prevElem.filetype, el.filetype];
@@ -90,7 +82,7 @@ const Slider = ({ elems }: IProjects) => {
           loading="lazy"
           alt="animation-slide"
           src={`${moveImg}-1920.${moveType}`}
-          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
+          srcSet={`${moveImg}-500.${moveType} 480w, ${moveImg}-800.${moveType} 768w, ${moveImg}-1200.${moveType} 1200w, ${moveImg}-1920.${moveType} 1920w`}
           sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px"
         ></img>
         <img
