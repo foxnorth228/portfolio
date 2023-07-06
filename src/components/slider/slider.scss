@@ -1,12 +1,14 @@
 .slider {
     width: 80%;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 60px;
     padding: 40px 0 40px 0;
     background-color: #fafafa;
-    border-radius: 60px;
-    border: 1px solid rgb(235, 235, 235);
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(3, min-content);
+    justify-items: center;
+    align-items: center;
     @media (min-width: 768px) and (max-width: 1200px) {
         width: 86%;
     }
@@ -16,8 +18,6 @@
         grid-template-columns: repeat(20, 1fr);
         grid-template-rows: repeat(4, min-content);
     }
-    justify-items: center;
-    align-items: center;
 }
 
 .slider__title {
@@ -28,10 +28,6 @@
 }
 
 .slider__imageBlock {
-    grid-area: 2 / 4 / span 1 / span 14;
-    @media (max-width: 767px) {
-        grid-area: 2 / 2 / span 1 / span 18;
-    }
     width: 100%;
     height: min-content;
     position: relative;
@@ -39,6 +35,10 @@
     overflow: hidden;
     transition: box-shadow 1.2s ease;
     box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0);
+    grid-area: 2 / 4 / span 1 / span 14;
+    @media (max-width: 767px) {
+        grid-area: 2 / 2 / span 1 / span 18;
+    }
 }
 
 .slider__imageBlock:hover {
@@ -46,36 +46,33 @@
     box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
 }
 
-.slider__description:hover, .slider__imageBlock:hover ~ .slider__description {
-    height: 100%;
-    max-height: calc(9 * 1.3 * 20px);;
-}
-
 .slider__nextimage {
-    position: absolute;
     width: 100%;
     height: 100%;
+    position: absolute;
     top: 0;
 }
 
 .slider__image {
     width: 100%;
     height: 100%;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 1.2s;
 }
 
 .slider__description {
+    width: 100%;
+    height: 100%;
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 1.1s ease;
     grid-area: 3 / 4 / span 1 / span 14;
     @media (max-width: 768px) {
         grid-area: 4 / 2 / span 1 / span 18;
     }
+}
+
+.slider__description:hover, .slider__imageBlock:hover ~ .slider__description {
     height: 100%;
-    width: 100%;
-    margin-left: 0;
-    max-height: 0; 
-    overflow: hidden; 
-    transition: max-height 1.1s ease;
+    max-height: calc(9 * 1.3 * 20px);
 }
 
 .slider__descelem {
