@@ -1,4 +1,4 @@
-@mixin gradiendBorder($gradient, $svg-url: "@assets/rounded-rect3.svg") {
+@mixin gradiendBorder($gradient, $svg-url: "@assets/rounded-rect3.svg", $sec-svg: "@assets/rounded-rect2.svg") {
     position: relative;
     display: flex;
     justify-content: center;
@@ -15,6 +15,10 @@
         mask: url($svg-url) center center / cover no-repeat;
         -webkit-mask: url($svg-url) center center / cover no-repeat;
         background-image: $gradient;
+        @media (max-width: 767px) {
+            mask-image: url($sec-svg);
+            -webkit-mask-image: url($sec-svg);
+        }
     }
 }
 
@@ -64,5 +68,18 @@
     @media (max-width: 480px) {
         width: 135px;
         height: 24px  * $height-scale;
+    }
+}
+
+@mixin formInputMargin {
+    margin-top: 22px;
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 17px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {   
+        margin-top: 15px;
+    }
+    @media (max-width: 480px) {
+        margin-top: 10px;
     }
 }
