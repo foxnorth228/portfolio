@@ -1,59 +1,52 @@
 .icon {
-    width: 60px;
-    height: 60px;
+    --icon-size: 60px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-right: 6px;
     clip-path: circle(50%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-right: 6px;
-    transition: transform 0.8s ease-out;
     transform: scale(1);
+    transition: transform 0.8s ease-out;
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
     }
     @media (min-width: 992px) and (max-width: 1199px) {
-        width: 55px;
-        height: 55px;
+        --icon-size: 55px;
     }
     @media (min-width: 768px) and (max-width: 991px) {
-        width: 50px;
-        height: 50px;
+        --icon-size: 50px;
     }
     @media (min-width: 481px) and (max-width: 767px) {
-        width: 42px;
-        height: 42px;
-        margin-right: 5px;
+        --icon-size: 42px;
     }
     @media (max-width: 480px) {
-        width: 30px;
-        height: 30px;
+        --icon-size: 30px;
         margin-right: 5px;
     }
 }
 
 .icon.icon_github {
+    --icon-github-size: 100px;
     margin: 20px  0 0 calc(8vw - 78px);
-    width: 100px;
-    height: 100px;
+    width: var(--icon-github-size);
+    height: var(--icon-github-size);
     @media (min-width: 992px) and (max-width: 1199px) {
         margin: 20px  0 0 calc(8vw - 60px);
-        width: 90px;
-        height: 90px;
+        --icon-github-size: 90px;
     }
     @media (min-width: 768px) and (max-width: 991px) {
         margin: 20px  0 0 20px;
-        width: 80px;
-        height: 80px;
+        --icon-github-size: 80px;
     }
     @media (min-width: 481px) and (max-width: 767px) {
         margin: 15px 0 0 15px;
-        width: 70px;
-        height: 70px;
+        --icon-github-size: 70px;
     }
     @media (max-width: 480px) {
         margin: 20px 0 0 20px;
-        width: 80px;
-        height: 80px;
+        --icon-github-size: 80px;
     }
 }
