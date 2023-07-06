@@ -2,40 +2,46 @@ import React from 'react';
 import './section-projects.scss';
 import Slider from '@components/slider/slider';
 
+export interface IProject {
+  src: string;
+  filetype: string;
+  title: string;
+  desc: string;
+  stack: string;
+  github: string;
+  deploy: string;
+}
+
 const SectionProjects = () => {
-  const projects = [
-    {
-      src: 'projects/green-api/green-api',
-      filetype: 'webp',
-      title: 'Green API Chat',
-      desc: 'Green API (russian API) that we can use to send messages via Whatsapp',
-      stack: 'React, Typescript, SASS/SCSS',
-      github: 'https://github.com/foxnorth228/green-api-chat',
-      deploy: 'https://master--thunderous-pothos-af6dd7.netlify.app/',
-    },
-    // {
-    //   src: 'projects/test-image.png',
-    //   title: 'Title2',
-    //   desc: 'description',
-    //   stack: 'stack',
-    //   github: 'github',
-    //   deploy: 'deploy',
-    // },
-    // {
-    //   src: 'projects/green-api.png',
-    //   title: 'Title3',
-    //   desc: 'description',
-    //   stack: 'stack',
-    //   github: 'github',
-    //   deploy: 'deploy',
-    // },
-  ];
+  const projects = process.env.PROJECT_DATA;
+  const separatedProjects = projects?.split('&');
+  const separatedProjectData = separatedProjects?.map((el) => el.split('|'));
+  const projectData: IProject[] = [];
+  if (!separatedProjectData) {
+    throw new Error('Bug with env');
+  }
+  try {
+    for (const datapack of separatedProjectData) {
+      projectData.push({
+        src: datapack[0],
+        filetype: datapack[1],
+        title: datapack[2],
+        desc: datapack[3],
+        stack: datapack[4],
+        github: datapack[5],
+        deploy: datapack[6],
+      });
+    }
+  } catch (err) {
+    throw new Error('Bug with env');
+  }
+
   return (
     <section id="section_projects" className="sectionProjects">
       <h1 className="sectionProjects__title">Projects</h1>
-      <Slider elems={projects} />
+      <Slider elems={projectData} />
     </section>
   );
 };
 
-export default SectionProjects;
+export default SectionProjects as React.ComponentType<unknown>;

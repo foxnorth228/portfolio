@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './main.scss';
 import SectionWelcome from '@components/section-welcome/section-welcome';
 import SectionAbout from '@components/section-about/section-about';
 import SectionSkills from '@components/section-skills/section-skills';
-import SectionProjects from '@components/section-projects/section-projects';
 
+const SectionProjects = React.lazy(
+  () => import('../../components/section-projects/section-projects.tsx')
+);
 const Main = () => {
   return (
     <main>
       <SectionWelcome />
       <SectionAbout />
       <SectionSkills />
-      <SectionProjects />
+      <Suspense fallback={<h2 className="slider">Loading slider...</h2>}>
+        <SectionProjects />
+      </Suspense>
     </main>
   );
 };
