@@ -1,13 +1,13 @@
 .skillList {
-    margin: 40px 0 70px 0;
-    display: grid;
-    grid-template-rows: calc(55px + 1em) calc(55px + 1em);
-    grid-template-columns: repeat(9, 1fr);
     width: 80%;
     max-width: 850px;
     height: 90%;
+    margin: 70px 0 70px 0;
+    display: grid;
+    grid-template-rows: calc(55px + 1em) calc(55px + 1em);
+    grid-template-columns: repeat(9, 1fr);
     @media (min-width: 768px) and (max-width: 991px) {
-        margin: 15px 0 55px 0;
+        margin: 35px 0 55px 0;
     }
     @media (min-width: 601px) and (max-width: 767px) {
         width: 90%;
@@ -16,11 +16,6 @@
     @media (max-width: 600px) {
         grid-template-rows: repeat(3,calc(55px + 1em));
         grid-template-columns: repeat(3, 1fr);
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        margin: 5px 0 30px 0;
-    }
-    @media (max-width: 480px) {
         margin: 5px 0 30px 0;
     }
 }
