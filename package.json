@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production --progress",
-    "build:netlify": "node ./create-env.js && webpack --mode production --progress",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'"
   },
@@ -57,8 +56,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "dotenv": "^16.3.1",
-    "dotenv-webpack": "^8.0.1",
     "email-js": "^2.0.2",
     "process": "^0.11.10"
   }

@@ -18,12 +18,12 @@ const ContactForm = () => {
       from_mail: data.email,
       message: data.message,
     };
-    emailjs.send(
-      process.env.SERVISE_ID ?? '',
-      process.env.TEMPLATE_ID ?? '',
-      answer,
-      process.env.PUBLIC_API_KEY ?? ''
-    );
+    // emailjs.send(
+    //   process.env.SERVISE_ID ?? '',
+    //   process.env.TEMPLATE_ID ?? '',
+    //   answer,
+    //   process.env.PUBLIC_API_KEY ?? ''
+    // );
     reset();
   };
   return (
