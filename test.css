@@ -24,3 +24,11 @@
 }
 
 @media (max-width: 320px)
+
+if (isEnd) {
+    total = arrPoses.length + '\n';
+    for (let i = 0; i < arrPoses.length; ++i) {
+        total += arrPoses[i] + ' ';
+    }
+    total = total.slice(0, -1);
+}

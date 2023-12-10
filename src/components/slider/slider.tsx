@@ -81,16 +81,16 @@ const Slider = ({ elems }: IProjects) => {
           className="slider__nextimage"
           loading="lazy"
           alt="animation-slide"
-          src={`${moveImg}-1920.${moveType}`}
-          srcSet={`${moveImg}-500.${moveType} 480w, ${moveImg}-800.${moveType} 768w, ${moveImg}-1200.${moveType} 1200w, ${moveImg}-1920.${moveType} 1920w`}
+          src={`${moveImg}/1920.${moveType}`}
+          srcSet={`${moveImg}/500.${moveType} 480w, ${moveImg}/800.${moveType} 768w, ${moveImg}/1200.${moveType} 1200w, ${moveImg}/1920.${moveType} 1920w`}
           sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px"
         ></img>
         <img
           className="slider__image"
           loading="lazy"
           alt="static-slide"
-          src={`${staticImg}-1920.${staticType}`}
-          srcSet={`${staticImg}-500.${staticType} 480w, ${staticImg}-800.${staticType} 768w, ${staticImg}-1200.${staticType} 1200w, ${staticImg}-1920.${staticType} 1920w`}
+          src={`${staticImg}/1920.${staticType}`}
+          srcSet={`${staticImg}/500.${staticType} 480w, ${staticImg}/800.${staticType} 768w, ${staticImg}/1200.${staticType} 1200w, ${staticImg}/1920.${staticType} 1920w`}
           sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px"
         ></img>
       </div>

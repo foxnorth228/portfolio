@@ -16,8 +16,15 @@ const AuthorFace = () => {
           I didn't stop there and continue learning something new. \
           I enjoy creating websites according to all modern quality standards. \
           My typical stack is React, Typescript, Sass, Webpack. \
-          In current time I haven't got work experience in this sphere, but I am working on some pet projects to hone my skills"
+          In current time I haven't got work experience in this sphere, but I am working on some pet projects to hone my skills. "
         }
+        <a
+          href="https://master--bright-paprenjak-d20833.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          My resume
+        </a>
       </figcaption>
     </figure>
   );
