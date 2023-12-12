@@ -1,0 +1,13 @@
+@use '@components/SectionTemplate/section-template.scss' as temp;
+
+.sectionProjects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include temp.section__marginTop();
+}
+
+.sectionProjects__title {
+    @include temp.section__title();
+}

@@ -1,0 +1,17 @@
+@use "@components/ContactLinks/contacts" as con;
+.contactsFooter {
+    display: flex;
+    flex-direction: row;
+    justify-self: start;
+    margin: 54px 30px 0 30px;
+    @media (min-width: 992px) and (max-width: 1199px) { 
+        margin-top: 44px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        justify-self: end;
+    }
+}
+
+.contactsFooter__link {
+    @include con.icon-top-diff();
+}
