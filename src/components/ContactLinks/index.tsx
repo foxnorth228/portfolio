@@ -5,28 +5,28 @@ import { scroller } from 'react-scroll';
 
 const Contacts = ({ isButton }: { isButton: boolean }) => {
   const links = [
-    ['mailto:khitrii03@gmail.com', 'ContactLinks/mail.svg', 'icon_main', 'programmist-mail-link'],
+    ['mailto:khitrii03@gmail.com', 'contacts/mail.svg', 'icon_main', 'programmist-mail-link'],
     [
       'https://www.linkedin.com/in/alex-khitry-016687265',
-      'ContactLinks/linked.svg',
+      'contacts/linked.svg',
       'icon_linked',
       'programmist-linkedin-link',
     ],
     [
       'https://t.me/foxnorth228',
-      'ContactLinks/telega.svg',
+      'contacts/telega.svg',
       'icon_telegram',
       'programmist-telegram-link',
     ],
     [
       'skype:cid.bd609d3ff0e2494c?userinfo',
-      'ContactLinks/skype.svg',
+      'contacts/skype.svg',
       'icon_telegram',
       'programmist-skype-link',
     ],
     [
       'https://wa.me/375292677541',
-      'ContactLinks/whatsapp.svg',
+      'contacts/whatsapp.svg',
       'icon_telegram',
       'programmist-whatsapp-link',
     ],

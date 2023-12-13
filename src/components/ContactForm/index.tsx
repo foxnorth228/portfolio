@@ -14,8 +14,8 @@ const ContactForm = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const answer = {
       from_name: data.name,
-      to_name: 'Alek',
-      from_mail: data.email,
+      to_name: 'Alex',
+      from_email: data.email,
       message: data.message,
     };
     emailjs.send(
@@ -30,8 +30,8 @@ const ContactForm = () => {
     <section className="contactForm">
       <Element name="ContactForm" />
       <img
-        width="686"
-        height="529"
+        width="100%"
+        height="100%"
         loading="lazy"
         className="contactForm__image"
         src="footer-image.webp"
