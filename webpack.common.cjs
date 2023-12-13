@@ -64,6 +64,7 @@ module.exports = {
       ],
     }),
     new DotenvWebpack({
+      path: './.env',
       systemvars: true
     })
   ],
