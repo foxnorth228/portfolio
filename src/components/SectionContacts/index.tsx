@@ -1,7 +1,7 @@
 import React from 'react';
-import './section-contacts.scss';
-import ContactForm from '@components/ContactForm/contact-form';
-import ContactsFooter from '@components/ContactsFooter/contacts-footer';
+import './style.scss';
+import ContactForm from '@components/ContactForm';
+import ContactsFooter from '@components/ContactsFooter';
 
 const SectionContacts = () => {
   return (

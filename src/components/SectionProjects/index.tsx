@@ -1,6 +1,6 @@
 import React from 'react';
-import './section-projects.scss';
-import Slider from '@components/Slider/slider';
+import './style.scss';
+import Slider from '@components/Slider';
 import projects from '@src/config/projects.ts';
 
 export interface IProject {

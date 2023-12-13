@@ -1,5 +1,5 @@
 import React from 'react';
-import './icon.scss';
+import './style.scss';
 
 interface IIcon {
   link: string;

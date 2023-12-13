@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import SectionContacts from '@components/SectionContacts/section-contacts';
+import SectionContacts from '@components/SectionContacts';
 
 const Footer = () => {
   return (

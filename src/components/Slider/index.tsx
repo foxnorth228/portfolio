@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
-import './slider.scss';
+import './style.scss';
 import './slider_arrows.scss';
-import { IProject } from '@components/SectionProjects/section-projects';
+import { IProject } from '@components/SectionProjects';
 
 interface IProjects {
   elems: IProject[];

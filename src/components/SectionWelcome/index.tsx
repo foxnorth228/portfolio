@@ -1,5 +1,5 @@
 import React from 'react';
-import './section-welcome.scss';
+import './style.scss';
 
 const SectionWelcome = () => {
   return (

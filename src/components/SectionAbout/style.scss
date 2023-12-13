@@ -1,4 +1,4 @@
-@use '@components/SectionTemplate/section-template.scss' as temp;
+@use '@components/SectionTemplate/style' as temp;
 
 .sectionAbout {
     display: flex;
@@ -12,8 +12,4 @@
     position: relative;
     z-index: 1;
     margin: 0;
-}
-
-.sectionAbout__image {
-    width: 100%;
 }

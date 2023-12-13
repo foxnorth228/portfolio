@@ -1,6 +1,6 @@
 import React from 'react';
-import './section-skills.scss';
-import SkillList from '@components/SkillList/skillList';
+import './style.scss';
+import SkillList from '@components/SkillList';
 
 const SectionSkills = () => {
   return (

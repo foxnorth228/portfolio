@@ -1,9 +1,8 @@
 import React from 'react';
-import './contacts.scss';
-import Icon from '@components/IconLink/icon';
-import { scroller } from 'react-scroll';
+import './style.scss';
+import Icon from '@components/IconLink';
 
-const Contacts = ({ isButton }: { isButton: boolean }) => {
+const ContactsFooter = () => {
   const links = [
     ['mailto:khitrii03@gmail.com', 'ContactLinks/mail.svg', 'icon_main', 'programmist-mail-link'],
     [
@@ -32,28 +31,14 @@ const Contacts = ({ isButton }: { isButton: boolean }) => {
     ],
   ];
   return (
-    <article className="contacts">
+    <article className="contactsFooter">
       {links.map((el, i) => (
-        <a aria-label={el[3]} key={i} href={el[0]} className="contacts__link">
+        <a aria-label={el[3]} key={i} href={el[0]} className="contactsFooter__link">
           <Icon link={el[1]} className={el[2]} />
         </a>
       ))}
-      {isButton && (
-        <button
-          onClick={() => {
-            scroller.scrollTo('ContactForm', {
-              duration: 2000,
-              smooth: 'easeInOutQuad',
-              offset: 100,
-            });
-          }}
-          className="contacts__button"
-        >
-          {"Let's connect"}
-        </button>
-      )}
     </article>
   );
 };
 
-export default Contacts;
+export default ContactsFooter;

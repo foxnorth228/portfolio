@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react';
-import SectionWelcome from '@components/SectionWelcome/section-welcome';
-import SectionAbout from '@components/SectionAbout/section-about';
-import SectionSkills from '@components/SectionSkills/section-skills';
+import SectionWelcome from '@components/SectionWelcome';
+import SectionAbout from '@components/SectionAbout';
+import SectionSkills from '@components/SectionSkills';
 
 const SectionProjects = React.lazy(
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  () => import('@components/SectionProjects/section-projects.tsx')
+  () => import('@components/SectionProjects')
 );
 const Main = () => {
   return (

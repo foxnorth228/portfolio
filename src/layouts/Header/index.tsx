@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
-import Nav from '@components/Nav/nav';
-import Icon from '@components/IconLink/icon';
-import Contacts from '@components/ContactLinks/contacts';
+import Nav from '@components/Nav';
+import Icon from '@components/IconLink';
+import Contacts from '@components/ContactLinks';
 
 const Header = () => {
   return (

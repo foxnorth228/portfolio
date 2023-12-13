@@ -1,5 +1,5 @@
 import React from 'react';
-import './skillList.scss';
+import './style.scss';
 
 const SkillList = () => {
   const skill_list = [
