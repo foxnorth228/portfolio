@@ -18,20 +18,20 @@ const ContactForm = () => {
       from_mail: data.email,
       message: data.message,
     };
-    // emailjs.send(
-    //   process.env.SERVISE_ID ?? '',
-    //   process.env.TEMPLATE_ID ?? '',
-    //   answer,
-    //   process.env.PUBLIC_API_KEY ?? ''
-    // );
+    emailjs.send(
+      process.env.SERVISE_ID ?? '',
+      process.env.TEMPLATE_ID ?? '',
+      answer,
+      process.env.PUBLIC_API_KEY ?? ''
+    );
     reset();
   };
   return (
     <section className="contactForm">
       <Element name="ContactForm" />
       <img
-        width="100%"
-        height="100%"
+        width="686"
+        height="529"
         loading="lazy"
         className="contactForm__image"
         src="footer-image.webp"
