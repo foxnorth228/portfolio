@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import Nav from '@components/Nav';
 import Icon from '@components/IconLink';
-import Contacts from '@components/ContactLinks';
+import ContactsConnect from '@components/ContactsConnect';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
         <Icon link="gitlogo.webp" className="icon_github" />
       </a>
       <Nav />
-      <Contacts isButton={true} />
+      <ContactsConnect />
     </header>
   );
 };

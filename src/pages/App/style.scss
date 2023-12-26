@@ -21,14 +21,8 @@ html{
     @media (min-width: 768px) and (max-width: 991px) {
         font-size: 16px;
     }
-    @media (min-width: 601px) and (max-width: 767px) {
+    @media (max-width: 767px) {
         font-size: 14px;
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        font-size: 13px;
-    }
-    @media (max-width: 480px) {
-        font-size: 12px;
     }
 }
 *,

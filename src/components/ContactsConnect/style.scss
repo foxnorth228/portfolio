@@ -1,0 +1,30 @@
+.contactsConnect {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1.5rem;
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin: 0 0.8rem;
+  }
+  @media (min-width: 601px) and (max-width: 767px) {
+    margin: 0 0.33rem;
+  }
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.contactsConnect__button {
+  background: #D9D9D9;
+  padding: 0.9rem 1.2rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: background 1.2s ease;
+  &:hover {
+    cursor: pointer;
+    background: #b8b8b8;
+  }
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
