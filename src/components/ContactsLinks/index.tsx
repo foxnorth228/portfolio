@@ -6,9 +6,9 @@ import links from '@config/links.ts';
 const ContactsLinks = () => {
   return (
     <article className="contactsLinks">
-      {links.map(({ link, iconPath, iconClass, label }, i) => (
+      {links.map(({ link, iconPath, label }, i) => (
         <a aria-label={label} key={i} href={link} className="contactsLinks__link">
-          <Icon link={iconPath} className={iconClass} />
+          <Icon link={iconPath} />
         </a>
       ))}
     </article>

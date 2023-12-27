@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header">
       <a href="https://github.com/foxnorth228" aria-label="programmist-github-link">
-        <Icon link="gitlogo.webp" className="icon_github" />
+        <Icon link="gitlogo.webp" className="header__icon_github" />
       </a>
       <Nav />
       <ContactsConnect />
