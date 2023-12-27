@@ -1,29 +1,19 @@
 import React from 'react';
 import './style.scss';
+import config from './config';
 
 const SkillList = () => {
-  const skill_list = [
-    ['html.svg', 'html'],
-    ['git.svg', 'git'],
-    ['css.svg', 'css'],
-    ['npm.svg', 'npm'],
-    ['js.svg', 'javascript'],
-    ['webpack.svg', 'webpack'],
-    ['ts.svg', 'typescript'],
-    ['sass.svg', 'SASS'],
-    ['react.svg', 'react'],
-  ];
   return (
     <div className="skillList">
-      {skill_list.map((el, i) => (
+      {config.skills.map(({ path, title }, i) => (
         <figure key={i} className="skill">
           <img
             loading="lazy"
-            alt={`${el[0]}-svg`}
-            src={`skills/${el[0]}`}
+            alt={`${title}-svg`}
+            src={`skills/${path}`}
             className="skill__image"
           ></img>
-          <figcaption className="skill__text">{el[1]}</figcaption>
+          <figcaption className="skill__text">{title}</figcaption>
         </figure>
       ))}
     </div>

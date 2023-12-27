@@ -7,10 +7,10 @@
     @include temp.section__marginTop();
 }
 
-.sectionSkills__block {
+.sectionSkills__container {
     width: 90%;
     height: fit-content;
-    border-radius: 63px;
+    border-radius: 3rem;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -19,15 +19,6 @@
 
 .sectionSkills__title {
     @include temp.section__title();
-    margin-top: 45px;
+    margin-top: 2rem;
     color: white;
-    @media (min-width: 768px) and (max-width: 991px) {
-        margin-top: 25px;
-    }
-    @media (min-width: 601px) and (max-width: 767px) {
-        margin-top: 15px;
-    }
-    @media (max-width: 600px) {
-        margin-top: 10px;
-    }
 }

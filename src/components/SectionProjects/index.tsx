@@ -3,16 +3,6 @@ import './style.scss';
 import Slider from '@components/Slider';
 import projects from '@src/config/projects.ts';
 
-export interface IProject {
-  src: string;
-  filetype: string;
-  title: string;
-  desc: string;
-  stack: string;
-  github: string;
-  deploy: string;
-}
-
 const SectionProjects = () => {
   return (
     <section id="section_projects" className="sectionProjects">
