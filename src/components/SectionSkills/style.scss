@@ -12,13 +12,19 @@
     height: fit-content;
     border-radius: 3rem;
     background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    justify-items: center;
+    grid-row-gap: 3rem;
+    padding: 3.5rem 0;
+    @media screen and (max-width: 600px) {
+        grid-row-gap: 2rem;
+        padding: 2.5rem 0;
+    }
 }
 
 .sectionSkills__title {
     @include temp.section__title();
-    margin-top: 2rem;
+    margin: 0;
     color: white;
 }

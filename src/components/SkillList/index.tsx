@@ -5,14 +5,9 @@ import config from './config';
 const SkillList = () => {
   return (
     <div className="skillList">
-      {config.skills.map(({ path, title }, i) => (
+      {config.skills.map(({ path, title, alt }, i) => (
         <figure key={i} className="skill">
-          <img
-            loading="lazy"
-            alt={`${title}-svg`}
-            src={`skills/${path}`}
-            className="skill__image"
-          ></img>
+          <img loading="lazy" alt={alt} src={path} className="skill__image"></img>
           <figcaption className="skill__text">{title}</figcaption>
         </figure>
       ))}

@@ -1,51 +1,29 @@
 .skillList {
-    --skill-image-scale: 55px;
-    @media (min-width: 992px) and (max-width: 1199px) {
-        --skill-image-scale: 50px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        --skill-image-scale: 40px;
-    }
-    @media (min-width: 601px) and (max-width: 767px) {
-        --skill-image-scale: 35px;
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        --skill-image-scale: 40px;
-    }
-    @media (max-width: 480px) {
-        --skill-image-scale: 35px;
-    }
+    --skill-image-scale: 2.5rem;
+    --skill-image-diff: 1.4em;
+    --skill-height: calc(var(--skill-image-scale) + var(--skill-image-diff));
     width: 80%;
     max-width: 850px;
-    height: 90%;
-    margin: 70px 0 70px 0;
     display: grid;
-    grid-template-rows: repeat(2, calc(var(--skill-image-scale) + 1.7em));
+    grid-template-rows: repeat(2, var(--skill-height));
     grid-template-columns: repeat(9, 1fr);
-    @media (min-width: 768px) and (max-width: 991px) {
-        margin: 35px 0 55px 0;
-    }
     @media (min-width: 601px) and (max-width: 767px) {
         width: 90%;
-        margin: 10px 0 45px 0;
     }
     @media (max-width: 600px) {
-        grid-template-rows: repeat(3, calc(var(--skill-image-scale) + 2em));
+        grid-template-rows: repeat(3, var(--skill-height));
         grid-template-columns: repeat(3, 1fr);
-        margin: 5px 0 30px 0;
     }
 }
 
 .skill {
+    width: 100%;
     outline: 0;
     border: 0;
-    position: relative;
     margin: 0;
-    justify-self: center;
-    width: 100%;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     @media not (max-width: 600px) {
         $n: 10;
         @for $i from 1 to $n {
@@ -68,29 +46,15 @@
 }
 
 .skill__image {
-    --skill-image-diff: 20px;
     width: var(--skill-image-scale);
     height: var(--skill-image-scale);
     margin-top: var(--skill-image-diff);
-    margin-bottom: -var(--skill-image-diff);
+    margin-bottom: var(--skill-image-diff);
     transition: margin-top 0.8s ease-out, margin-bottom 0.8s ease-out;
-    @media (min-width: 768px) and (max-width: 991px) {
-        --skill-image-diff: 15px;
+    .skill:hover & {
+        margin-top: 0;
+        margin-bottom: 0;
     }
-    @media (min-width: 601px) and (max-width: 767px) {
-        --skill-image-diff: 15px;
-    }
-    @media (min-width: 481px) and (max-width: 600px) {
-        --skill-image-diff: 10px;
-    }
-    @media (max-width: 480px) {
-        --skill-image-diff: 10px;
-    }
-}
-
-.skill:hover .skill__image {
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .skill__text {
@@ -100,8 +64,7 @@
     color: white;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
-}
-
-.skill:hover .skill__text {
-    opacity: 1;
+    .skill:hover & {
+        opacity: 1;
+    }
 }

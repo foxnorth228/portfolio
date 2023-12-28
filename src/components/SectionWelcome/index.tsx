@@ -13,8 +13,8 @@ const SectionWelcome = () => {
         <img
           width="100%"
           height="100%"
-          alt="programmer-picture"
-          src="programmer-picture2.webp"
+          alt={config.imgAlt}
+          src={config.imgSrc}
           className="sectionWelcome__picture"
         ></img>
       </article>
